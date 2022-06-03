@@ -1,0 +1,22 @@
+---
+title: "Sobre"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Eu sou Wilson Freitas.
+
+- Físico
+- Pai de 2 meninos (já grandinhos!)
+- Corredor
+- Padeiro
+- Gosto de fazer contas
+
+Tô tentando deixar um legado em pacotes em R e Python para tornar a vida das pessoas menos miserável.
+
+## Vida Saudável
+
+[A Dieta do Abdômen](https://wilsonfreitas.github.io/pages/dieta-do-abdomen.html)
+: Sim eu fiz a dieta do abdômen e posso dizer que foi uma ótima experiência de alimentação saudável. A dieta do abdômen é um programa de educação alimentar. Não é um programa radical, ela define grupos de alimentos que devem ser priorizados, sem exageros. É um programa que ensina a comer corretamente.

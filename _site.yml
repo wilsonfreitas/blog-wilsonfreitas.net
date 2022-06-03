@@ -1,0 +1,27 @@
+name: "wilsonfreitas"
+title: "Wilson Freitas"
+description: |
+  Wilson Freitas
+output_dir: "_site"
+base_url: https://wilsonfreitas.net/
+navbar:
+  search: true
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "Sobre"
+      href: about.html
+    - text: "Projetos"
+      href: projects.html
+    - text: "Apresentações"
+      href: press.html
+    - icon: fa fa-rss
+      href: index.xml
+output: distill::distill_article
+collections:
+  posts:
+    disqus: aboutwilson
+    share: [twitter, linkedin]
+    categories: true
+    categories_metadata: true
+    authors_metadata: false
