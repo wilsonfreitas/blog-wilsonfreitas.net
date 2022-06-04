@@ -2153,9 +2153,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <div class="d-article">
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://dplyr.tidyverse.org'>dplyr</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://ggplot2.tidyverse.org'>ggplot2</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/wilsonfreitas/rbcb'>rbcb</a></span><span class='op'>)</span>
+</code></pre>
+</div>
 </div>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>get_market_expectations</span> |&gt; <span class='fu'><a href='https://rdrr.io/r/base/args.html'>args</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
 <pre><code>function (type = c(&quot;annual&quot;, &quot;quarterly&quot;, &quot;monthly&quot;, &quot;inflation-12-months&quot;, 
     &quot;top5s-monthly&quot;, &quot;top5s-annual&quot;, &quot;institutions&quot;, &quot;selic&quot;, 
     &quot;top5s-selic&quot;), indic = NULL, start_date = NULL, end_date = NULL, 
@@ -2163,6 +2172,12 @@ document.addEventListener('DOMContentLoaded', function() {
 NULL</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/rbcb/man/get_market_expectations.html'>get_market_expectations</a></span><span class='op'>(</span><span class='st'>"annual"</span>, indic <span class='op'>=</span> <span class='st'>"IPCA"</span>, start_date <span class='op'>=</span> <span class='st'>"2020-12-01"</span>,
+                              `$filter` <span class='op'>=</span> <span class='st'>"(DataReferencia eq '2021' or DataReferencia eq '2022') and baseCalculo eq 0"</span><span class='op'>)</span>
+<span class='va'>df</span> |&gt; <span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
 <pre><code># A tibble: 6 x 11
   Indicador IndicadorDetalhe Data       DataReferencia Media Mediana
   &lt;chr&gt;     &lt;lgl&gt;            &lt;date&gt;     &lt;chr&gt;          &lt;dbl&gt;   &lt;dbl&gt;
@@ -2176,16 +2191,47 @@ NULL</code></pre>
 #   Maximo &lt;dbl&gt;, numeroRespondentes &lt;int&gt;, baseCalculo &lt;int&gt;</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df</span> |&gt;
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Data</span>, y <span class='op'>=</span> <span class='va'>Mediana</span>, group <span class='op'>=</span> <span class='va'>DataReferencia</span>, colour <span class='op'>=</span> <span class='va'>DataReferencia</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
 <p><img src="expectativas-focus-com-rbcb_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
 </div>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df</span> |&gt;
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>DataReferencia</span> <span class='op'>==</span> <span class='fl'>2021</span><span class='op'>)</span> |&gt;
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>Min <span class='op'>=</span> <span class='va'>Media</span> <span class='op'>-</span> <span class='va'>DesvioPadrao</span>, Max <span class='op'>=</span> <span class='va'>Media</span> <span class='op'>+</span> <span class='va'>DesvioPadrao</span><span class='op'>)</span> |&gt;
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Data</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>y <span class='op'>=</span> <span class='va'>Mediana</span><span class='op'>)</span>, colour <span class='op'>=</span> <span class='st'>"black"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>y <span class='op'>=</span> <span class='va'>Max</span><span class='op'>)</span>, colour <span class='op'>=</span> <span class='st'>"grey"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>y <span class='op'>=</span> <span class='va'>Min</span><span class='op'>)</span>, colour <span class='op'>=</span> <span class='st'>"grey"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_ribbon.html'>geom_ribbon</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>ymin <span class='op'>=</span> <span class='va'>Min</span>, ymax <span class='op'>=</span> <span class='va'>Max</span><span class='op'>)</span>, fill <span class='op'>=</span> <span class='st'>"blue"</span>, alpha <span class='op'>=</span> <span class='fl'>0.3</span><span class='op'>)</span>
+</code></pre>
+</div>
 <p><img src="expectativas-focus-com-rbcb_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
 </div>
 <h3 id="coeficiente-de-variação-cv">Coeficiente de variação (CV)</h3>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df</span> |&gt;
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>DataReferencia</span> <span class='op'>==</span> <span class='fl'>2021</span><span class='op'>)</span> |&gt;
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>CV <span class='op'>=</span> <span class='va'>Media</span> <span class='op'>/</span> <span class='va'>DesvioPadrao</span><span class='op'>)</span> |&gt;
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Data</span>, y <span class='op'>=</span> <span class='va'>CV</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
 <p><img src="expectativas-focus-com-rbcb_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
 </div>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/rbcb/man/get_market_expectations.html'>get_market_expectations</a></span><span class='op'>(</span><span class='st'>"annual"</span>, indic <span class='op'>=</span> <span class='st'>"PIB Total"</span>, start_date <span class='op'>=</span> <span class='st'>"2020-12-01"</span>,
+                              `$filter` <span class='op'>=</span> <span class='st'>"(DataReferencia eq '2021' or DataReferencia eq '2022') and baseCalculo eq 0"</span><span class='op'>)</span>
+<span class='va'>df</span> |&gt; <span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
 <pre><code># A tibble: 6 x 11
   Indicador IndicadorDetalhe Data       DataReferencia Media Mediana
   &lt;chr&gt;     &lt;lgl&gt;            &lt;date&gt;     &lt;chr&gt;          &lt;dbl&gt;   &lt;dbl&gt;
@@ -2199,6 +2245,12 @@ NULL</code></pre>
 #   Maximo &lt;dbl&gt;, numeroRespondentes &lt;int&gt;, baseCalculo &lt;int&gt;</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df</span> |&gt;
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Data</span>, y <span class='op'>=</span> <span class='va'>Mediana</span>, group <span class='op'>=</span> <span class='va'>DataReferencia</span>, colour <span class='op'>=</span> <span class='va'>DataReferencia</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
 <p><img src="expectativas-focus-com-rbcb_files/figure-html5/unnamed-chunk-8-1.png" width="624" /></p>
 </div>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
