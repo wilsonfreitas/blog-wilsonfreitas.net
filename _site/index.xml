@@ -7,7 +7,21 @@
     <description>Wilson Freitas
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Fri, 03 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Indicadores da Pesquisa Focus</title>
+      <dc:creator>Wilson Freitas</dc:creator>
+      <link>https://wilsonfreitas.net/posts/2022-06-05-indicadores-da-pesquisa-focus</link>
+      <description>As APIs de Expectativas de Mercado da Pesquisa Focus não informam
+direito quais indicadores estão disponíveis. A documentação é meio falha e
+pouco confiável. Dessa maneira, a única maneira de descobrir o que está
+disponível é investigando a API. É isso que vou mostrar como fazer neste post.</description>
+      <category>R</category>
+      <category>bcb</category>
+      <category>opendata</category>
+      <guid>https://wilsonfreitas.net/posts/2022-06-05-indicadores-da-pesquisa-focus</guid>
+      <pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Expectativas de Mercado da Pesquisa Focus no R</title>
       <dc:creator>Wilson Freitas</dc:creator>
