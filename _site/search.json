@@ -5,14 +5,14 @@
       "title": "Sobre",
       "author": [],
       "contents": "\r\nEu sou Wilson Freitas.\r\nFísico\r\nPai de 2 meninos (já grandinhos!)\r\nCorredor\r\nPadeiro\r\nGosto de fazer contas\r\nTô tentando deixar um legado em pacotes em R e Python para tornar a vida das pessoas menos miserável.\r\nVida Saudável\r\nA Dieta do Abdômen\r\nSim eu fiz a dieta do abdômen e posso dizer que foi uma ótima experiência de alimentação saudável. A dieta do abdômen é um programa de educação alimentar. Não é um programa radical, ela define grupos de alimentos que devem ser priorizados, sem exageros. É um programa que ensina a comer corretamente.\r\n\r\n\r\n",
-      "last_modified": "2022-06-05T08:09:46-03:00"
+      "last_modified": "2022-06-07T05:49:23-03:00"
     },
     {
       "path": "index.html",
       "title": "Wilson Freitas",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-06-05T08:09:47-03:00"
+      "last_modified": "2022-06-07T05:49:24-03:00"
     },
     {
       "path": "press.html",
@@ -20,7 +20,7 @@
       "description": "Material sobre apresentações que eu dei sobre temas envolvendo \nfinanças quantitativas, desenvolvimento quantitativo e data science.",
       "author": [],
       "contents": "\r\n2022\r\nPalestra Renda Fixa com R @ VI Seminário Internacional de Estatística com R · Repositório · Vídeo\r\n2021\r\nTutorial Análise de Séries Temporais com Python @ SciPy Latin America 2021 · Repositório\r\n2018\r\nImportando e Manipulando Dados Financeiros no R @ SER II 2018 · Slides\r\nModelagem de Séries Temporais com Python @ PythonSudeste 2018 · Slides\r\n2017\r\nModelagem de Séries Temporais em Python @ PyData · Slides · Repositório · Vídeo\r\nModelagem de Séries Temporais em Python @ GrupySP · Slides · Repositório\r\n2016\r\nFinanças Quantitativas com Python @ TDC · Slides\r\nAPIs de visualização em Python @ GrupySP · Repositório\r\n2015\r\nbizdays: Dias Úteis em Qualquer Calendário @ GrupySP · Slides\r\nAnálise dos campeões da Corrida de São Silvestre com Python @ GrupySP · Slides\r\n2014\r\nAPIs de visualização em Python @ TDC · Slides · Vídeo\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-06-05T08:09:47-03:00"
+      "last_modified": "2022-06-07T05:49:25-03:00"
     },
     {
       "path": "projects.html",
@@ -28,7 +28,7 @@
       "description": "Algumas das coisas que me fazem acordar cedo ou dormir tarde, de vez\nem quando.",
       "author": [],
       "contents": "\r\nrb3\r\nOs arquivos disponibilizados no mercado financeiro brasileiro são da idade da pedra. Definitivamente não há um padrão, o que torna difícil o trabalho de quem faz análise de dados do mercado financeiro brasileiro. O pacote rb3, ataca este problema criando parsers para todos os arquivos divulgados pela B3. Estes arquivos contem informação de diversos contratos negociados na Bolsa, de onde é possível extrair diversos insumos para análise de negociação e gestão de risco.\r\nRepositório\r\nSite\r\nfixedincome\r\nfixedincome é um pacote para realizar cálculos de renda fixa. É bastante específico para quem trabalha com finanças. O objetivo é trabalhar com cálculos de envolvendo taxas de juros de forma estruturada e limpa.\r\nRepositório\r\nSite\r\ncopom\r\nNo Brasil, temos as reuniões do COPOM (Comitê de Política Monetária do Banco Central) onde os rumos da política monetária do pais são decididos. As decisões do COPOM, que determinam as taxas de juros de curto prazo, influenciam a dinâmica das curvas de juros. Dessa maneira, é possível extrair da curva de juros as expectativas de mercado das decisões do COPOM.\r\nAlgumas abordagens são implementadas no pacote copom.\r\nRepositório\r\nSite\r\nrbcb\r\nrbcb é mais um pacote R na missão de estruturar os dados utilizados no mercado financeiro brasileiro, neste caso, dados publicados pelo Banco Central do Brasil (BCB) no seu portal de dados abertos. Este pacote baixa as séries divulgadas pelo BCB e disponibiliza em estruturas de dados no R.\r\nRepositório\r\npython-bcb\r\npython-bcb é o hermitiano conjugado do rbcb. Nessa de usar R e Python o trabalho acaba sendo duplicado, mas faz parte!\r\nRepositório\r\nSite\r\nbizdays\r\nbizdays é um pacote para contagem de dias úteis. Foi originalmente escrito em R e depois foi portado para Python.\r\nHoje tem muito mais do que dias úteis:\r\ncalcula dias úteis entre duas datas, de acordo com um calendário\r\nverifica se as data são dias úteis\r\nsoma (subtrai) dias úteis a datas\r\nconverte de dias úteis para dias corridos\r\ne um pouquinho mais …\r\nR-bizdays\r\nRepositório\r\nSite\r\n\r\npython-bizdays\r\nRepositório\r\nSite\r\n\r\nnumbersBR\r\nnumbersBR é um pacote R para fazer validação dos diversos números de identificação existentes no Brasil, como: CPF, CNPJ, …\r\nRepositório\r\nEstratégias de trading (Trading Strategies)\r\nFui monitor do cursos de Estratégias de Trading do Mestrado Profissional de Finanças Quantitativas da Faculdade de Economia da Fundação Getúlio Vargas.\r\nFiz um material bem legal nesse curso com apresentações e códigos em R que podem ser encontrados aqui.\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-06-05T08:09:48-03:00"
+      "last_modified": "2022-06-07T05:49:25-03:00"
     }
   ],
   "collections": ["posts/posts.json"]

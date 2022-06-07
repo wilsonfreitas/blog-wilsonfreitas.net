@@ -4,6 +4,7 @@ description: |
   Wilson Freitas
 output_dir: "_site"
 base_url: https://wilsonfreitas.net/
+google_analytics: "G-XRV3E6TPHB"
 navbar:
   search: true
   right:
