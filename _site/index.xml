@@ -7,7 +7,20 @@
     <description>Wilson Freitas
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 05 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Curva de Juros de Americana - US Treasuries Curve</title>
+      <dc:creator>Wilson Freitas</dc:creator>
+      <link>https://wilsonfreitas.net/posts/2022-06-08-curva-de-juros-de-americana-us-treasuries-curve</link>
+      <description>Como construir a curva de juros americana utilizando dados do Tesouro
+Americano (US Treasury) e o pacote {fixedincome}.</description>
+      <category>R</category>
+      <category>fixedincome</category>
+      <category>opendata</category>
+      <guid>https://wilsonfreitas.net/posts/2022-06-08-curva-de-juros-de-americana-us-treasuries-curve</guid>
+      <pubDate>Mon, 06 Jun 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://wilsonfreitas.net/posts/2022-06-08-curva-de-juros-de-americana-us-treasuries-curve/curva-de-juros-de-americana-us-treasuries-curve_files/figure-html5/unnamed-chunk-10-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>Indicadores da Pesquisa Focus</title>
       <dc:creator>Wilson Freitas</dc:creator>
