@@ -1,5 +1,53 @@
 [
   {
+    "path": "posts/2022-06-10-histrico-de-taxas-de-juros-em-dlar-no-brasil/",
+    "title": "Histórico de Taxas de Juros em Dólar no Brasil",
+    "description": "Foi analisado em um post recente a dinâmica das taxas de juros,\nbrasileira e americana.\nTrago neste post a comparação entre as taxas de juros em dólar,\nno Brasil e nos Estados Unidos.",
+    "author": [
+      {
+        "name": "Wilson Freitas",
+        "url": {}
+      }
+    ],
+    "date": "2022-06-10",
+    "categories": [
+      "R",
+      "fixedincome",
+      "rb3",
+      "opendata"
+    ],
+    "contents": "\r\nEm um post recente.\r\n\r\n\r\nlibrary(Quandl)\r\n\r\nyc_all <- Quandl(\"USTREASURY/YIELD\")\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\ndusd <- yc_usd_mget(\r\n  first_date = \"2019-01-01\",\r\n  last_date = preceding(Sys.Date() - 1, \"Brazil/ANBIMA\"),\r\n  cache_folder = \"../../../rb3-data\"\r\n)\r\n\r\n\r\n\r\n\r\n\r\nunique(dusd$refdate) |> map(function(date, df) {\r\n  df_curve <- df |>\r\n    filter(refdate == date, cur_days > 0) |>\r\n    filter(!duplicated(cur_days))\r\n  curve <- spotratecurve(\r\n    df_curve$r_360,\r\n    df_curve$cur_days,\r\n    \"simple\", \"actual/360\", \"actual\",\r\n    refdate = date\r\n  )\r\n  interpolation(curve) <- interp_flatforward()\r\n  curve\r\n}, df = dusd) -> curves_usd\r\n\r\n\r\n\r\n\r\n\r\ncurves_usd |>\r\n  map_dfr(\\(x) tibble(\r\n    refdate = x@refdate,\r\n    r_USD_br_10y = as.numeric(x[[3600]])\r\n  )) -> rates_usd_10y\r\n\r\n\r\n\r\n\r\n\r\nrates_10y |>\r\n  left_join(rates_usd_10y, by = \"refdate\") |>\r\n  tidyr::pivot_longer(c(r_USD_br_10y, r_USD_us_10y),\r\n    names_to = \"rates\"\r\n  ) |>\r\n  ggplot(aes(x = refdate, y = value, colour = rates)) +\r\n  geom_line() +\r\n  labs(colour = NULL) +\r\n  theme(legend.position = \"bottom\") +\r\n  labs(\r\n    x = NULL, y = NULL,\r\n    title = \"Histórico de Taxas de Juros em Dólar de 10 Anos\",\r\n    subtitle = \"Estados Unidos (r_USD_us_10y) e Brasil (r_USD_br_10y)\",\r\n    caption = \"wilsonfreitas\"\r\n  ) +\r\n  scale_y_continuous(labels = scales::percent) +\r\n  theme(legend.position = \"bottom\")\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+    "preview": "posts/2022-06-10-histrico-de-taxas-de-juros-em-dlar-no-brasil/histrico-de-taxas-de-juros-em-dlar-no-brasil_files/figure-html5/unnamed-chunk-1-1.png",
+    "last_modified": "2022-06-10T08:34:45-03:00",
+    "input_file": "histrico-de-taxas-de-juros-em-dlar-no-brasil.knit.md",
+    "preview_width": 1248,
+    "preview_height": 768
+  },
+  {
+    "path": "posts/2022-06-09-histrico-de-taxas-de-juros-de-longo-prazo/",
+    "title": "Histórico de Taxas de Juros de Longo Prazo",
+    "description": "As taxas de juros de longo prazo são importantes variáveis econômicas.\nObservar a dinâmica dessas taxas é fundamental para uma boa compreensão\ndo cenário econômico.\nVamos ver como utilizar o pacote {fixedincome} para construir o histórico da\ntaxa de juros prefixada para o prazo de 10 anos com dados extraídos da B3\ncom o pacote {rb3}.",
+    "author": [
+      {
+        "name": "Wilson Freitas",
+        "url": {}
+      }
+    ],
+    "date": "2022-06-09",
+    "categories": [
+      "R",
+      "fixedincome",
+      "rb3",
+      "opendata"
+    ],
+    "contents": "\r\nNo mercado norte americano há cotações para taxas de juros em prazos fixos, 1 ano, 5 anos, 10 anos, e assim por diante. Estas estruturas são conhecidas como Constant Term Maturities.\r\nEstes dados podem ser obtidos do site do Tesouro Americano (US Treasury) com o pacote {Quandl}.\r\n\r\n\r\nlibrary(Quandl)\r\n\r\nyc_all <- Quandl(\"USTREASURY/YIELD\")\r\n\r\n\r\n\r\n\r\n\r\n\r\nPodemos observar um longo histórico, desde a década de 90, para estas taxas.\r\n\r\n\r\nyc_all |>\r\n    ggplot(aes(x = Date, y = `10 YR` / 100)) +\r\n    geom_line() +\r\n    labs(\r\n        x = NULL, y = NULL,\r\n        title = \"Histórico de Taxas de Juros Americanos de 10 Anos (Treasury Bonds)\",\r\n        caption = \"Dados do US Treasury obtidos com o pacote Quandl - wilsonfreitas\"\r\n    ) +\r\n    scale_y_continuous(labels = scales::percent)\r\n\r\n\r\n\r\n\r\nNo mercado brasileiro, infelizmente, a vida é um pouco miserável, e não há um histórico disponível com taxas de longo prazo. É necessário construir na unha e na força do ódio.\r\nOs ativos líquidos de onde são extraídas as taxas de juros de longo prazo são os contratos futuros de taxa DI - DI1, que são cotados diariamente na B3 em seus vencimentos. Entretanto, as taxas de juros obtidas destes contratos apresentam um prazo diferente a cada dia. Assim, é necessário construir uma curva de juros com estes contratos e realizar uma interpolação nos prazos fixos, 1 ano, 5 anos, 10 anos, e por aí vai.\r\nVamos utilizar o pacote {rb3} para obter o histórico com as curvas diárias de juros prefixados do mercado brasileiro e o pacote {fixedincome} para construir os objetos de curvas de juros e realizar a interpolação das curvas nos vértices fixos para obter o histórico de taxas de juros de longo prazo.\r\nVamos começar importando os pacotes utilizados nessa jornada.\r\n\r\n\r\nlibrary(rb3)\r\nlibrary(bizdays)\r\nlibrary(fixedincome)\r\nlibrary(tidyverse)\r\n\r\n\r\n\r\nA função rb3::yc_mget retorna um data.frame com o histórico de curvas de juros. Vamos baixar um histórico desde 2019.\r\n\r\n\r\ndc <- yc_mget(\r\n    first_date = \"2019-01-01\",\r\n    last_date = preceding(Sys.Date() - 1, \"Brazil/ANBIMA\"),\r\n    cache_folder = \"../../../rb3-data\"\r\n)\r\n\r\n\r\n\r\nDe posse do histórico, vamos construir as curvas de juros para cada data de referência utilizando a função fixedincome::spotratecurve. A curva de juros prefixada tem as seguintes características:\r\nregime de capitalização: discrete (juros compostos)\r\nregra de contagem de dias: business/252\r\ncalendário: Brazil/ANBIMA\r\ninterpolação: flat-forward\r\nAdicionalmente faço uma limpeza nos eventuais problemas encontrados nos dados, como dias úteis zerados e duplicados. Bem, é de graça, exigir dados corretos deve ser um pouco demais, né?\r\n\r\n\r\nunique(dc$refdate) |> map(function(date, df) {\r\n    df_curve <- df |>\r\n        filter(refdate == date, biz_days > 0) |>\r\n        filter(!duplicated(biz_days))\r\n    curve <- spotratecurve(\r\n        df_curve$r_252,\r\n        df_curve$biz_days,\r\n        \"discrete\", \"business/252\", \"Brazil/ANBIMA\",\r\n        refdate = date\r\n    )\r\n    interpolation(curve) <- interp_flatforward()\r\n    curve\r\n}, df = dc) -> curves\r\n\r\n\r\n\r\nObtendo um lista com as curvas de juros utilizamos os colchetes [[ para realizar a interpolação no prazo fixo de 10 anos. Como estas curvas utilizam a regra de contagem de dias business/252, devemos considerar que 1 ano tem 252 dias úteis e portanto, 10 anos tem 2520 dias úteis. Por isso, interpolamos a curva no vértice 2520.\r\n\r\n\r\ncurves |>\r\n    map_dfr(\\(x) tibble(\r\n        refdate = x@refdate,\r\n        r_BRL_10y = as.numeric(x[[2520]])\r\n    )) -> rates_10y\r\n\r\n\r\n\r\nJá aproveito e retorno o histórico em um data.frame com as colunas refdate e r_BRL_10y. Faço isso para juntar com os dados de juros americanos de 10 anos e assim comparar a dinâmica das taxas conjuntamente.\r\n\r\n\r\nrates_10y <- rates_10y |>\r\n    left_join(yc_all |> select(Date, `10 YR`), by = c(\"refdate\" = \"Date\")) |>\r\n    rename(r_USD_us_10y = `10 YR`) |>\r\n    mutate(r_USD_us_10y = r_USD_us_10y / 100)\r\n\r\n\r\n\r\nNote que eu nomeio a taxa de juros americana com r_USD_us_10y, pois essa é uma taxa que capitaliza o dólar (USD) nos Estados Unidos (us). Abaixo faço um malabarismo com tidyr::pivot_longer para preparar os dados para o ggplot e assim visualizá-los lado a lado. Note ainda que libero a escala dos gráficos (scales = \"free_y\") para que a diferença de nível entre as taxas de juros, brasileira e americana, não afete a análise. O objetivo é visualizar a dinâmica das taxas de juros ao longo do tempo.\r\n\r\n\r\nrates_10y |>\r\n    tidyr::pivot_longer(\r\n        c(r_BRL_10y, r_USD_us_10y),\r\n        names_to = \"rates\"\r\n    ) |>\r\n    ggplot(aes(x = refdate, y = value, colour = rates)) +\r\n    geom_line() +\r\n    facet_wrap(. ~ rates, scales = \"free_y\") +\r\n    labs(\r\n        x = NULL, y = NULL,\r\n        title = \"Histórico de Taxas de Juros de 10 Anos\",\r\n        subtitle = \"Americanos (r_USD_us_10y) e Brasileiro (r_BRL_10y)\",\r\n        caption = \"wilsonfreitas\"\r\n    ) +\r\n    scale_y_continuous(labels = scales::percent) +\r\n    theme(legend.position = \"none\")\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+    "preview": "posts/2022-06-09-histrico-de-taxas-de-juros-de-longo-prazo/histrico-de-taxas-de-juros-de-longo-prazo_files/figure-html5/unnamed-chunk-3-1.png",
+    "last_modified": "2022-06-10T08:32:28-03:00",
+    "input_file": "histrico-de-taxas-de-juros-de-longo-prazo.knit.md",
+    "preview_width": 1248,
+    "preview_height": 768
+  },
+  {
     "path": "posts/2022-06-08-curva-de-juros-de-americana-us-treasuries-curve/",
     "title": "Curva de Juros de Americana - US Treasuries Curve",
     "description": "Como construir a curva de juros americana utilizando dados do Tesouro\nAmericano (US Treasury) e o pacote {fixedincome}.",
@@ -65,6 +113,29 @@
     "input_file": {},
     "preview_width": 1248,
     "preview_height": 768
+  },
+  {
+    "path": "posts/2022-06-09-grficos-de-composio-de-ndices-da-b3/",
+    "title": "Gráficos de Composição de Índices da B3",
+    "description": "Com o pacote {rb3} é possível obter a composição dos índices da B3, como o\nIBOVESPA, por exemplo.\nVamos construir alguns gráficos para avaliarmos características da composição\ndos índices.",
+    "author": [
+      {
+        "name": "Wilson Freitas",
+        "url": {}
+      }
+    ],
+    "date": "2022-06-01",
+    "categories": [
+      "R",
+      "rb3",
+      "opendata"
+    ],
+    "contents": "\r\n\r\n\r\nlibrary(rb3)\r\nlibrary(tidyverse)\r\n\r\ntop_weight <- function(.data, n = 10) {\r\n    top_10 <- .data |>\r\n        arrange(desc(weight)) |>\r\n        slice_head(n = n) |>\r\n        select(symbol, weight)\r\n    total_weight <- sum(top_10$weight)\r\n    others <- tibble(\r\n        symbol = \"Others\",\r\n        weight = 1 - total_weight\r\n    )\r\n    bind_rows(top_10, others) |>\r\n        mutate(cum_weight = cumsum(weight))\r\n}\r\n\r\nindex_name <- \"IBXX\"\r\ng <- index_weights_get(index_name) |>\r\n    top_weight() |>\r\n    mutate(\r\n        ymax = cum_weight,\r\n        ymin = c(0, head(cum_weight, n = -1)),\r\n        label_pos = (ymax + ymin) / 2,\r\n        label = paste0(symbol, \"\\n\", scales::percent(weight)),\r\n        symbol = factor(symbol, ordered = TRUE)\r\n    ) |>\r\n    ggplot(aes(\r\n        ymax = ymax, ymin = ymin,\r\n        xmax = 4, xmin = 3,\r\n        fill = symbol\r\n    )) +\r\n    geom_rect(colour = \"white\") +\r\n    geom_label(\r\n        x = 4.5, aes(y = label_pos, label = label), size = 3\r\n    ) +\r\n    annotate(\r\n        \"text\",\r\n        x = 0, y = 0, label = index_name, size = 16, colour = \"grey\",\r\n        fontface = 2\r\n    ) +\r\n    coord_polar(theta = \"y\") +\r\n    scale_fill_brewer(palette = \"Set3\") +\r\n    scale_color_brewer(palette = \"Set3\") +\r\n    xlim(c(0, 4)) +\r\n    theme_void() +\r\n    theme(legend.position = \"none\") +\r\n    labs(\r\n        caption = \"Source: B3 (data imported using \\U1F4E6 rb3) - wilsonfreitas\"\r\n    )\r\n\r\ng\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+    "preview": "posts/2022-06-09-grficos-de-composio-de-ndices-da-b3/grficos-de-composio-de-ndices-da-b3_files/figure-html5/unnamed-chunk-1-1.png",
+    "last_modified": "2022-06-10T08:36:00-03:00",
+    "input_file": "grficos-de-composio-de-ndices-da-b3.knit.md",
+    "preview_width": 1344,
+    "preview_height": 1344
   },
   {
     "path": "posts/2022-01-17-dados-bcb-com-python/",

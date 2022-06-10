@@ -7,7 +7,41 @@
     <description>Wilson Freitas
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Mon, 06 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Histórico de Taxas de Juros em Dólar no Brasil</title>
+      <dc:creator>Wilson Freitas</dc:creator>
+      <link>https://wilsonfreitas.net/posts/2022-06-10-histrico-de-taxas-de-juros-em-dlar-no-brasil</link>
+      <description>Foi analisado em um post recente a dinâmica das taxas de juros,
+brasileira e americana.
+Trago neste post a comparação entre as taxas de juros em dólar,
+no Brasil e nos Estados Unidos.</description>
+      <category>R</category>
+      <category>fixedincome</category>
+      <category>rb3</category>
+      <category>opendata</category>
+      <guid>https://wilsonfreitas.net/posts/2022-06-10-histrico-de-taxas-de-juros-em-dlar-no-brasil</guid>
+      <pubDate>Fri, 10 Jun 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://wilsonfreitas.net/posts/2022-06-10-histrico-de-taxas-de-juros-em-dlar-no-brasil/histrico-de-taxas-de-juros-em-dlar-no-brasil_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Histórico de Taxas de Juros de Longo Prazo</title>
+      <dc:creator>Wilson Freitas</dc:creator>
+      <link>https://wilsonfreitas.net/posts/2022-06-09-histrico-de-taxas-de-juros-de-longo-prazo</link>
+      <description>As taxas de juros de longo prazo são importantes variáveis econômicas.
+Observar a dinâmica dessas taxas é fundamental para uma boa compreensão
+do cenário econômico.
+Vamos ver como utilizar o pacote {fixedincome} para construir o histórico da
+taxa de juros prefixada para o prazo de 10 anos com dados extraídos da B3
+com o pacote {rb3}.</description>
+      <category>R</category>
+      <category>fixedincome</category>
+      <category>rb3</category>
+      <category>opendata</category>
+      <guid>https://wilsonfreitas.net/posts/2022-06-09-histrico-de-taxas-de-juros-de-longo-prazo</guid>
+      <pubDate>Thu, 09 Jun 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://wilsonfreitas.net/posts/2022-06-09-histrico-de-taxas-de-juros-de-longo-prazo/histrico-de-taxas-de-juros-de-longo-prazo_files/figure-html5/unnamed-chunk-3-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>Curva de Juros de Americana - US Treasuries Curve</title>
       <dc:creator>Wilson Freitas</dc:creator>
@@ -47,6 +81,21 @@ Pesquisa Focus utilizando o R e o pacote {rbcb}.</description>
       <guid>https://wilsonfreitas.net/posts/2022-06-03-expectativas-focus-com-rbcb</guid>
       <pubDate>Fri, 03 Jun 2022 00:00:00 +0000</pubDate>
       <media:content url="https://wilsonfreitas.net/posts/2022-06-03-expectativas-focus-com-rbcb/expectativas-focus-com-rbcb_files/figure-html5/ipca-mediana-desviopadrao-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Gráficos de Composição de Índices da B3</title>
+      <dc:creator>Wilson Freitas</dc:creator>
+      <link>https://wilsonfreitas.net/posts/2022-06-09-grficos-de-composio-de-ndices-da-b3</link>
+      <description>Com o pacote {rb3} é possível obter a composição dos índices da B3, como o
+IBOVESPA, por exemplo.
+Vamos construir alguns gráficos para avaliarmos características da composição
+dos índices.</description>
+      <category>R</category>
+      <category>rb3</category>
+      <category>opendata</category>
+      <guid>https://wilsonfreitas.net/posts/2022-06-09-grficos-de-composio-de-ndices-da-b3</guid>
+      <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://wilsonfreitas.net/posts/2022-06-09-grficos-de-composio-de-ndices-da-b3/grficos-de-composio-de-ndices-da-b3_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1344" height="1344"/>
     </item>
     <item>
       <title>Obtendo Dados do BCB com Python</title>
