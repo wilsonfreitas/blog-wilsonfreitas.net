@@ -19,7 +19,7 @@ output:
     self_contained: false
 ---
 
-[1]: _posts/2022-06-09-histrico-de-taxas-de-juros-de-longo-prazo
+[1]: /posts/2022-06-09-histrico-de-taxas-de-juros-de-longo-prazo/index.html
 
 Em um [post][1] recente.
 
