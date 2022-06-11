@@ -18,8 +18,8 @@
     ],
     "contents": "\r\nEm um post recente.\r\n\r\n\r\nlibrary(Quandl)\r\n\r\nyc_all <- Quandl(\"USTREASURY/YIELD\")\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\ndusd <- yc_usd_mget(\r\n  first_date = \"2019-01-01\",\r\n  last_date = preceding(Sys.Date() - 1, \"Brazil/ANBIMA\"),\r\n  cache_folder = \"../../../rb3-data\"\r\n)\r\n\r\n\r\n\r\n\r\n\r\nunique(dusd$refdate) |> map(function(date, df) {\r\n  df_curve <- df |>\r\n    filter(refdate == date, cur_days > 0) |>\r\n    filter(!duplicated(cur_days))\r\n  curve <- spotratecurve(\r\n    df_curve$r_360,\r\n    df_curve$cur_days,\r\n    \"simple\", \"actual/360\", \"actual\",\r\n    refdate = date\r\n  )\r\n  interpolation(curve) <- interp_flatforward()\r\n  curve\r\n}, df = dusd) -> curves_usd\r\n\r\n\r\n\r\n\r\n\r\ncurves_usd |>\r\n  map_dfr(\\(x) tibble(\r\n    refdate = x@refdate,\r\n    r_USD_br_10y = as.numeric(x[[3600]])\r\n  )) -> rates_usd_10y\r\n\r\n\r\n\r\n\r\n\r\nrates_10y |>\r\n  left_join(rates_usd_10y, by = \"refdate\") |>\r\n  tidyr::pivot_longer(c(r_USD_br_10y, r_USD_us_10y),\r\n    names_to = \"rates\"\r\n  ) |>\r\n  ggplot(aes(x = refdate, y = value, colour = rates)) +\r\n  geom_line() +\r\n  labs(colour = NULL) +\r\n  theme(legend.position = \"bottom\") +\r\n  labs(\r\n    x = NULL, y = NULL,\r\n    title = \"Histórico de Taxas de Juros em Dólar de 10 Anos\",\r\n    subtitle = \"Estados Unidos (r_USD_us_10y) e Brasil (r_USD_br_10y)\",\r\n    caption = \"wilsonfreitas\"\r\n  ) +\r\n  scale_y_continuous(labels = scales::percent) +\r\n  theme(legend.position = \"bottom\")\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
     "preview": "posts/2022-06-10-histrico-de-taxas-de-juros-em-dlar-no-brasil/histrico-de-taxas-de-juros-em-dlar-no-brasil_files/figure-html5/unnamed-chunk-1-1.png",
-    "last_modified": "2022-06-11T06:00:31-03:00",
-    "input_file": "histrico-de-taxas-de-juros-em-dlar-no-brasil.knit.md",
+    "last_modified": "2022-06-11T06:00:32-03:00",
+    "input_file": {},
     "preview_width": 1248,
     "preview_height": 768
   },

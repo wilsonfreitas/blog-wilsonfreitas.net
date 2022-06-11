@@ -88,14 +88,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>Wilson Freitas: Projetos</title>
+  <title>Wilson Freitas: Projetos em R</title>
 
   <meta property="description" itemprop="description" content="Algumas das coisas que me fazem acordar cedo ou dormir tarde, de vez&#10;em quando."/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Wilson Freitas: Projetos"/>
+  <meta property="og:title" content="Wilson Freitas: Projetos em R"/>
   <meta property="og:type" content="article"/>
   <meta property="og:description" content="Algumas das coisas que me fazem acordar cedo ou dormir tarde, de vez&#10;em quando."/>
   <meta property="og:locale" content="en_US"/>
@@ -103,14 +103,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Wilson Freitas: Projetos"/>
+  <meta property="twitter:title" content="Wilson Freitas: Projetos em R"/>
   <meta property="twitter:description" content="Algumas das coisas que me fazem acordar cedo ou dormir tarde, de vez&#10;em quando."/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["Projetos"]},{"type":"character","attributes":{},"value":["Algumas das coisas que me fazem acordar cedo ou dormir tarde, de vez\nem quando."]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["Projetos em R"]},{"type":"character","attributes":{},"value":["Algumas das coisas que me fazem acordar cedo ou dormir tarde, de vez\nem quando."]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2094,7 +2094,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Projetos","description":"Algumas das coisas que me fazem acordar cedo ou dormir tarde, de vez\nem quando.","authors":[]}
+{"title":"Projetos em R","description":"Algumas das coisas que me fazem acordar cedo ou dormir tarde, de vez\nem quando.","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2108,7 +2108,18 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="nav-right">
 <a href="index.html">Home</a>
 <a href="about.html">Sobre</a>
-<a href="projects.html">Projetos</a>
+<div class="nav-dropdown">
+<button class="nav-dropbtn">
+Projetos
+ 
+<span class="down-arrow">&#x25BE;</span>
+</button>
+<div class="nav-dropdown-content">
+<a href="R.html">R</a>
+<a href="python.html">Python</a>
+<a href="shinyapps.html">Shinyapps</a>
+</div>
+</div>
 <a href="press.html">Apresentações</a>
 <a href="index.xml">
 <i class="fa fa-rss" aria-hidden="true"></i>
@@ -2122,7 +2133,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Projetos</h1>
+<h1>Projetos em R</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 <p><p>Algumas das coisas que me fazem acordar cedo ou dormir tarde, de vez em quando.</p></p>
@@ -2130,52 +2141,51 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 <div class="d-article">
-<h2 id="curva-pré">Curva Pré</h2>
-<p>Shinyapp para visualização da curva de juros prefixados extraída dos contratos futuros de taxa DI (DI1).</p>
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
 <ul>
-<li><a href="https://wilsonfreitas.shinyapps.io/curvapre/">Link</a></li>
+<li><a href="#rb3">rb3📦</a></li>
+<li><a href="#fixedincome">fixedincome📦</a></li>
+<li><a href="#copom">copom📦</a></li>
+<li><a href="#oplib">oplib📦</a></li>
+<li><a href="#rbcb">rbcb📦</a></li>
+<li><a href="#bizdays">bizdays📦</a></li>
+<li><a href="#numbersbr">numbersBR📦</a></li>
+<li><a href="#estratégias-de-trading-trading-strategies">Estratégias de trading (Trading Strategies)</a></li>
 </ul>
-<p>Avalia-se:</p>
-<ul>
-<li>Curva de Juros Prefixados com um horizonte de 2 anos para uma data específica
-<ul>
-<li>Taxas de juros a termo entre os vértices da curva</li>
-</ul></li>
-<li>Expectativas de taxas de juros nas reuniões do COPOM</li>
-<li>Curva de Juros Prefixados completa + taxas de juros a termo + datas de reuniões do COPOM</li>
-</ul>
-<p><img src="images/tela-curvapre.png" /></p>
-<h2 id="rb3">rb3</h2>
+</nav>
+</div>
+<h2 id="rb3">rb3📦</h2>
 <p>Os arquivos disponibilizados no mercado financeiro brasileiro são da idade da pedra. Definitivamente não há um padrão, o que torna difícil o trabalho de quem faz análise de dados do mercado financeiro brasileiro. O pacote <a href="https://github.com/wilsonfreitas/rb3">rb3</a>, ataca este problema criando <em>parsers</em> para todos os arquivos divulgados pela <a href="https://b3.com.br">B3</a>. Estes arquivos contem informação de diversos contratos negociados na Bolsa, de onde é possível extrair diversos insumos para análise de negociação e gestão de risco.</p>
 <ul>
 <li><a href="https://github.com/wilsonfreitas/rb3">Repositório</a></li>
 <li><a href="http://wilsonfreitas.github.io/rb3">Site</a></li>
 </ul>
-<h2 id="fixedincome">fixedincome</h2>
+<h2 id="fixedincome">fixedincome📦</h2>
 <p><code>fixedincome</code> é um pacote para realizar cálculos de renda fixa. É bastante específico para quem trabalha com finanças. O objetivo é trabalhar com cálculos de envolvendo taxas de juros de forma estruturada e limpa.</p>
 <ul>
 <li><a href="https://github.com/wilsonfreitas/R-fixedincome">Repositório</a></li>
 <li><a href="http://wilsonfreitas.github.io/R-fixedincome">Site</a></li>
 </ul>
-<h2 id="copom">copom</h2>
+<h2 id="copom">copom📦</h2>
 <p>No Brasil, temos as reuniões do COPOM (Comitê de Política Monetária do Banco Central) onde os rumos da política monetária do pais são decididos. As decisões do COPOM, que determinam as taxas de juros de curto prazo, influenciam a dinâmica das curvas de juros. Dessa maneira, é possível extrair da curva de juros as expectativas de mercado das decisões do COPOM.</p>
 <p>Algumas abordagens são implementadas no pacote <code>copom</code>.</p>
 <ul>
 <li><a href="https://github.com/wilsonfreitas/copom">Repositório</a></li>
 <li><a href="http://wilsonfreitas.github.io/copom">Site</a></li>
 </ul>
-<h2 id="rbcb">rbcb</h2>
+<h2 id="oplib">oplib📦</h2>
+<p><code>oplib</code> implementa diversos modelos de pricing para opções e cálculo de volatilidade implícita aplicados a opções de ações, índices, moedas e taxas de juros.</p>
+<ul>
+<li><a href="https://github.com/wilsonfreitas/oplib">Repositório</a></li>
+</ul>
+<h2 id="rbcb">rbcb📦</h2>
 <p><a href="https://github.com/wilsonfreitas/rbcb">rbcb</a> é mais um pacote R na missão de estruturar os dados utilizados no mercado financeiro brasileiro, neste caso, dados publicados pelo Banco Central do Brasil (BCB) no seu portal de dados abertos. Este pacote baixa as séries divulgadas pelo BCB e disponibiliza em estruturas de dados no R.</p>
 <ul>
 <li><a href="https://github.com/wilsonfreitas/rbcb">Repositório</a></li>
 </ul>
-<h2 id="python-bcb">python-bcb</h2>
-<p><a href="https://github.com/wilsonfreitas/python-bcb">python-bcb</a> é o hermitiano conjugado do <code>rbcb</code>. Nessa de usar R e Python o trabalho acaba sendo duplicado, mas faz parte!</p>
-<ul>
-<li><a href="https://github.com/wilsonfreitas/python-bcb">Repositório</a></li>
-<li><a href="http://wilsonfreitas.github.io/python-bcb">Site</a></li>
-</ul>
-<h2 id="bizdays">bizdays</h2>
+<h2 id="bizdays">bizdays📦</h2>
 <p><code>bizdays</code> é um pacote para contagem de dias úteis. Foi originalmente escrito em R e depois foi portado para Python.</p>
 <p>Hoje tem muito mais do que dias úteis:</p>
 <ul>
@@ -2186,18 +2196,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ul>
 <p>e um pouquinho mais …</p>
 <ul>
-<li>R-bizdays
-<ul>
 <li><a href="https://github.com/wilsonfreitas/R-bizdays">Repositório</a></li>
 <li><a href="http://wilsonfreitas.github.io/R-bizdays">Site</a></li>
-</ul></li>
-<li>python-bizdays
-<ul>
-<li><a href="https://github.com/wilsonfreitas/python-bizdays">Repositório</a></li>
-<li><a href="http://wilsonfreitas.github.io/python-bizdays">Site</a></li>
-</ul></li>
 </ul>
-<h2 id="numbersbr">numbersBR</h2>
+<h2 id="numbersbr">numbersBR📦</h2>
 <p><a href="https://github.com/wilsonfreitas/numbersBR">numbersBR</a> é um pacote R para fazer validação dos diversos números de identificação existentes no Brasil, como: CPF, CNPJ, …</p>
 <ul>
 <li><a href="https://github.com/wilsonfreitas/numbersBR">Repositório</a></li>
