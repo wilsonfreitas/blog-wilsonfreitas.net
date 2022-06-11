@@ -34,6 +34,15 @@ e um pouquinho mais ...
 - [Repositório](https://github.com/wilsonfreitas/python-bizdays)
 - [Site](http://wilsonfreitas.github.io/python-bizdays)
 
+## textparser📦
+
+Um simples parser de texto baseado em expressões regulares.
+Frequentemente preciso fazer o *parsing* de texto em inteiros, decimais, datas, e outros formatos.
+Isso levava a muita duplicação de código, de forma que criei esse pequeno módulo onde
+posso centralizar todos os parsers que preciso em uma estrutura que me permite, utilizando
+expressões regulares, criar uma hierarquia para a realização dos parsers.
+
+- [Repositório](https://github.com/wilsonfreitas/textparser)
 
 ## Pricing Brazilian Securities (Lecture Notes)
 
