@@ -1,9 +1,9 @@
 ---
 title: "Gráficos de Composição de Índices da B3"
 description: |
-    Com o pacote {rb3} é possível obter a composição dos índices da B3,
-    como o IBOVESPA, por exemplo. Vamos construir alguns gráficos donuts
-    para avaliarmos a distribuição da composição dos índices.
+  Com o pacote {rb3} é possível obter a composição dos índices da B3,
+  como o IBOVESPA, por exemplo. Vamos construir alguns gráficos donuts
+  para avaliarmos a distribuição da composição dos índices.
 author:
   - name: Wilson Freitas
     url: {}
