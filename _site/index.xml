@@ -86,16 +86,15 @@ Pesquisa Focus utilizando o R e o pacote {rbcb}.</description>
       <title>Gráficos de Composição de Índices da B3</title>
       <dc:creator>Wilson Freitas</dc:creator>
       <link>https://wilsonfreitas.net/posts/2022-06-09-grficos-de-composio-de-ndices-da-b3</link>
-      <description>Com o pacote {rb3} é possível obter a composição dos índices da B3, como o
-IBOVESPA, por exemplo.
-Vamos construir alguns gráficos para avaliarmos características da composição
-dos índices.</description>
+      <description>Com o pacote {rb3} é possível obter a composição dos índices da B3,
+como o IBOVESPA, por exemplo. Vamos construir alguns gráficos donuts
+para avaliarmos a distribuição da composição dos índices.</description>
       <category>R</category>
       <category>rb3</category>
       <category>opendata</category>
       <guid>https://wilsonfreitas.net/posts/2022-06-09-grficos-de-composio-de-ndices-da-b3</guid>
       <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://wilsonfreitas.net/posts/2022-06-09-grficos-de-composio-de-ndices-da-b3/grficos-de-composio-de-ndices-da-b3_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1344" height="1344"/>
+      <media:content url="https://wilsonfreitas.net/posts/2022-06-09-grficos-de-composio-de-ndices-da-b3/grficos-de-composio-de-ndices-da-b3_files/figure-html5/unnamed-chunk-4-1.png" medium="image" type="image/png" width="1440" height="1440"/>
     </item>
     <item>
       <title>Obtendo Dados do BCB com Python</title>
