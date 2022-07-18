@@ -102,7 +102,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="og:title" content="Wilson Freitas: 16 anos de Curva Prefixada"/>
 <meta property="og:type" content="article"/>
 <meta property="og:url" content="https://wilsonfreitas.net/posts/2022-06-18-16-anos-de-curva-prefixada/"/>
-<meta property="og:image" content="https://wilsonfreitas.net/posts/2022-06-18-16-anos-de-curva-prefixada/16-anos-de-curva-prefixada_files/figure-html5/unnamed-chunk-5-1.png"/>
+<meta property="og:image" content="https://wilsonfreitas.net/posts/2022-06-18-16-anos-de-curva-prefixada/16-anos-de-curva-prefixada_files/figure-html5/unnamed-chunk-4-1.png"/>
 <meta property="og:image:width" content="1248"/>
 <meta property="og:image:height" content="1536"/>
 <meta property="og:locale" content="en_US"/>
@@ -112,7 +112,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="twitter:card" content="summary_large_image"/>
 <meta property="twitter:title" content="Wilson Freitas: 16 anos de Curva Prefixada"/>
 <meta property="twitter:url" content="https://wilsonfreitas.net/posts/2022-06-18-16-anos-de-curva-prefixada/"/>
-<meta property="twitter:image" content="https://wilsonfreitas.net/posts/2022-06-18-16-anos-de-curva-prefixada/16-anos-de-curva-prefixada_files/figure-html5/unnamed-chunk-5-1.png"/>
+<meta property="twitter:image" content="https://wilsonfreitas.net/posts/2022-06-18-16-anos-de-curva-prefixada/16-anos-de-curva-prefixada_files/figure-html5/unnamed-chunk-4-1.png"/>
 <meta property="twitter:image:width" content="1248"/>
 <meta property="twitter:image:height" content="1536"/>
 
@@ -131,7 +131,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["16-anos-de-curva-prefixada_files/anchor-4.2.2/anchor.min.js","16-anos-de-curva-prefixada_files/bowser-1.9.3/bowser.min.js","16-anos-de-curva-prefixada_files/distill-2.2.21/template.v2.js","16-anos-de-curva-prefixada_files/figure-html5/unnamed-chunk-5-1.png","16-anos-de-curva-prefixada_files/figure-html5/unnamed-chunk-8-1.png","16-anos-de-curva-prefixada_files/header-attrs-2.14/header-attrs.js","16-anos-de-curva-prefixada_files/jquery-3.6.0/jquery-3.6.0.js","16-anos-de-curva-prefixada_files/jquery-3.6.0/jquery-3.6.0.min.js","16-anos-de-curva-prefixada_files/jquery-3.6.0/jquery-3.6.0.min.map","16-anos-de-curva-prefixada_files/popper-2.6.0/popper.min.js","16-anos-de-curva-prefixada_files/tippy-6.2.7/tippy-bundle.umd.min.js","16-anos-de-curva-prefixada_files/tippy-6.2.7/tippy-light-border.css","16-anos-de-curva-prefixada_files/tippy-6.2.7/tippy.css","16-anos-de-curva-prefixada_files/tippy-6.2.7/tippy.umd.min.js","16-anos-de-curva-prefixada_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["16-anos-de-curva-prefixada_files/anchor-4.2.2/anchor.min.js","16-anos-de-curva-prefixada_files/bowser-1.9.3/bowser.min.js","16-anos-de-curva-prefixada_files/distill-2.2.21/template.v2.js","16-anos-de-curva-prefixada_files/figure-html5/unnamed-chunk-4-1.png","16-anos-de-curva-prefixada_files/figure-html5/unnamed-chunk-5-1.png","16-anos-de-curva-prefixada_files/figure-html5/unnamed-chunk-7-1.png","16-anos-de-curva-prefixada_files/figure-html5/unnamed-chunk-8-1.png","16-anos-de-curva-prefixada_files/header-attrs-2.14/header-attrs.js","16-anos-de-curva-prefixada_files/jquery-3.6.0/jquery-3.6.0.js","16-anos-de-curva-prefixada_files/jquery-3.6.0/jquery-3.6.0.min.js","16-anos-de-curva-prefixada_files/jquery-3.6.0/jquery-3.6.0.min.map","16-anos-de-curva-prefixada_files/popper-2.6.0/popper.min.js","16-anos-de-curva-prefixada_files/tippy-6.2.7/tippy-bundle.umd.min.js","16-anos-de-curva-prefixada_files/tippy-6.2.7/tippy-light-border.css","16-anos-de-curva-prefixada_files/tippy-6.2.7/tippy.css","16-anos-de-curva-prefixada_files/tippy-6.2.7/tippy.umd.min.js","16-anos-de-curva-prefixada_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2129,6 +2129,7 @@ gtag('config', 'G-XRV3E6TPHB');
 <div class="nav-right">
 <a href="../../index.html">Home</a>
 <a href="../../about.html">Sobre</a>
+<a href="../../courses.html">cursos</a>
 <div class="nav-dropdown">
 <button class="nav-dropbtn">
 Projetos
@@ -2206,21 +2207,12 @@ Projetos
 </code></pre>
 </div>
 </div>
-<p>Para construir a curva prefixada é necessário obter as datas de vencimento dos contratos futuros. O problema é que o data.frame é bastante grande e utilizar a função <code>rb3::maturity2date</code> para converter o código de vencimento na data de vencimento leva um tempão. Por isso vou dar um <code>distinct</code> na coluna <code>maturity_code</code> para obter as datas de vencimento e na sequência vou fazer um <em>join</em> com o data.frame original.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>mats</span> <span class='op'>&lt;-</span> <span class='va'>df_di1</span> |&gt;
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/distinct.html'>distinct</a></span><span class='op'>(</span><span class='va'>maturity_code</span><span class='op'>)</span> |&gt;
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>maturity_date <span class='op'>=</span> <span class='fu'><a href='http://wilsonfreitas.github.io/rb3/reference/maturity2date.html'>maturity2date</a></span><span class='op'>(</span><span class='va'>maturity_code</span><span class='op'>)</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<p>Aqui utilizo o <code>dplyr::left_join</code> para juntar os vencimentos ao data.frame original. Adicionalmente faço o ajuste da data de referência criando a coluna <code>fixing</code>, calculo os dias úteis (coluna <code>business_days</code>) e a taxa de juros com base no preço de ajuste <code>price</code> gerando a coluna <code>adjusted_tax</code>.</p>
+<p>Para construir a curva prefixada é necessário obter as datas de vencimento dos contratos futuros. Para isso utilizo a função <code>rb3::maturity2date</code> que converte o código de vencimento em data. Adicionalmente faço o ajuste da data de referência criando a coluna <code>fixing</code>, calculo os dias úteis (coluna <code>business_days</code>) e a taxa de juros com base no preço de ajuste <code>price</code> gerando a coluna <code>adjusted_tax</code>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_di1_futures</span> <span class='op'>&lt;-</span> <span class='va'>df_di1</span> |&gt;
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate-joins.html'>left_join</a></span><span class='op'>(</span><span class='va'>mats</span>, by <span class='op'>=</span> <span class='st'>"maturity_code"</span><span class='op'>)</span> |&gt;
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>
+    maturity_date <span class='op'>=</span> <span class='fu'><a href='http://wilsonfreitas.github.io/rb3/reference/maturity2date.html'>maturity2date</a></span><span class='op'>(</span><span class='va'>maturity_code</span><span class='op'>)</span>,
     fixing <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/bizdays/man/adjust.date.html'>following</a></span><span class='op'>(</span><span class='va'>maturity_date</span>, <span class='st'>"Brazil/ANBIMA"</span><span class='op'>)</span>,
     business_days <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/bizdays/man/bizdays.html'>bizdays</a></span><span class='op'>(</span><span class='va'>refdate</span>, <span class='va'>fixing</span>, <span class='st'>"Brazil/ANBIMA"</span><span class='op'>)</span>,
     adjusted_tax <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/fixedincome/man/rates.html'>rates</a></span><span class='op'>(</span><span class='st'>"discrete"</span>, <span class='va'>business_days</span> <span class='op'>/</span> <span class='fl'>252</span>, <span class='fl'>100000</span> <span class='op'>/</span> <span class='va'>price</span><span class='op'>)</span>
@@ -2250,7 +2242,7 @@ Projetos
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_y_continuous</a></span><span class='op'>(</span>labels <span class='op'>=</span> <span class='fu'>scales</span><span class='fu'>::</span><span class='va'><a href='https://scales.r-lib.org/reference/percent_format.html'>percent</a></span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="16-anos-de-curva-prefixada_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
+<p><img src="16-anos-de-curva-prefixada_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
 </div>
 <p>Curioso ver a mudança de <em>shape</em> da curva entre os anos e ao longo de cada ano. Uma coisa curiosa é observar os anos de 2016, 2017 e 2018. 2016/2017 foram os anos do impechemant da presidente Dilma. Em 2016 a parte curta da curva variou pouco e a parte longa variou muito. Em 2017 aconteceu o oposto, a parte curta da curva variou mais que a parte longa da curva. Nestes anos, as mudanças afetam diretamente o <em>shape</em> da curva. Em 2018, o ano da eleição e da facada do Bolsonaro, há uma grande variação na parte longa da curva, mas sem alterar o <em>shape</em> da curva. Ainda é possível avaliar o comportamento da curva com os demais eventos políticos e econômicos. Em 2021, por exemplo, onde ocorreu uma elevação da taxa SELIC e uma piora do cenário fiscal, temos um espectro muita amplo do <em>shape</em> da curva.</p>
 <p>É possível construir uma visualização equivalente utilizando dados da curva americana que podem ser obtidos com o pacote Quandl.</p>
@@ -2341,7 +2333,7 @@ Projetos
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_y_continuous</a></span><span class='op'>(</span>labels <span class='op'>=</span> <span class='fu'>scales</span><span class='fu'>::</span><span class='va'><a href='https://scales.r-lib.org/reference/percent_format.html'>percent</a></span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="16-anos-de-curva-prefixada_files/figure-html5/unnamed-chunk-8-1.png" width="624" /></p>
+<p><img src="16-anos-de-curva-prefixada_files/figure-html5/unnamed-chunk-7-1.png" width="624" /></p>
 </div>
 <p>Já na curva americana, a dinâmica é muito mais bem comportada. A parte longo costuma oscilar, mas mantendo a dinâmica. Os anos 2007, 2008 e 2020, onde tivemos crise do subprime e COVID, trouxeram mais volatilidade.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>

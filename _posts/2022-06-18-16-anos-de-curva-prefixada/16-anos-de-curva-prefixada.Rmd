@@ -65,26 +65,16 @@ df_di1 <- df |> filter(commodity == "DI1")
 
 Para construir a curva prefixada é necessário obter as datas de vencimento dos contratos
 futuros.
-O problema é que o data.frame é bastante grande e utilizar a função `rb3::maturity2date`
-para converter o código de vencimento na data de vencimento leva um tempão.
-Por isso vou dar um `distinct` na coluna `maturity_code` para obter as datas de vencimento e 
-na sequência vou fazer um *join* com o data.frame original.
-
-```{r cache=TRUE}
-mats <- df_di1 |>
-  distinct(maturity_code) |>
-  mutate(maturity_date = maturity2date(maturity_code))
-```
-
-Aqui utilizo o `dplyr::left_join` para juntar os vencimentos ao data.frame original.
+Para isso utilizo a função `rb3::maturity2date` que converte o código de vencimento
+em data.
 Adicionalmente faço o ajuste da data de referência criando a coluna `fixing`,
 calculo os dias úteis (coluna `business_days`) e a taxa de juros com base no preço de ajuste `price`
 gerando a coluna `adjusted_tax`.
 
 ```{r cache=TRUE}
 df_di1_futures <- df_di1 |>
-  left_join(mats, by = "maturity_code") |>
   mutate(
+    maturity_date = maturity2date(maturity_code),
     fixing = following(maturity_date, "Brazil/ANBIMA"),
     business_days = bizdays(refdate, fixing, "Brazil/ANBIMA"),
     adjusted_tax = rates("discrete", business_days / 252, 100000 / price)
