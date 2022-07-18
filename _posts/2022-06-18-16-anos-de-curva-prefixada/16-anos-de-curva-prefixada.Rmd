@@ -1,6 +1,8 @@
 ---
 title: "16 anos de Curva Prefixada"
-draft: true
+description: |
+  Observando a dinâmica da estrutura a termo de juros no Brasil e nos Estados
+  Unidos ao longo dos últimos 16 anos.
 author:
   - name: Wilson Freitas
     url: {}
@@ -28,7 +30,7 @@ library(ggplot2)
 ```
 
 ```{r load-data, echo=FALSE, cache=TRUE}
-cache_folder <- "C:\\Users\\wilso\\OneDrive\\Documentos\\rb3-cache"
+cache_folder <- "C:\\Users\\wilso\\R\\rb3-cache"
 df <- futures_mget(
   first_date = "2007-01-01",
   last_date = preceding(Sys.Date() - 1, "Brazil/ANBIMA"),
@@ -88,7 +90,7 @@ na data de vencimento.
 
 Agora vamos gerar a visualização com ggplot2.
 
-```{r cache=TRUE, fig.height=8, fig.fig.width=8}
+```{r cache=TRUE, fig.height=8, fig.fig.width=8, preview=TRUE}
 df_di1_futures |>
   mutate(year = as.integer(format(refdate, "%Y"))) |>
   ggplot(aes(

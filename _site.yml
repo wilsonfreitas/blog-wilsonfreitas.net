@@ -12,7 +12,7 @@ navbar:
       href: index.html
     - text: "Sobre"
       href: about.html
-    - text: "cursos"
+    - text: "Cursos"
       href: courses.html
     - text: "Projetos"
       menu:

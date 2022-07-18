@@ -7,7 +7,21 @@
     <description>Wilson Freitas
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Fri, 10 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>16 anos de Curva Prefixada</title>
+      <dc:creator>Wilson Freitas</dc:creator>
+      <link>https://wilsonfreitas.net/posts/2022-06-18-16-anos-de-curva-prefixada</link>
+      <description>Observando a dinâmica da estrutura a termo de juros no Brasil e nos Estados
+Unidos ao longo dos últimos 16 anos.</description>
+      <category>R</category>
+      <category>fixedincome</category>
+      <category>rb3</category>
+      <category>opendata</category>
+      <guid>https://wilsonfreitas.net/posts/2022-06-18-16-anos-de-curva-prefixada</guid>
+      <pubDate>Sat, 18 Jun 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://wilsonfreitas.net/posts/2022-06-18-16-anos-de-curva-prefixada/16-anos-de-curva-prefixada_files/figure-html5/unnamed-chunk-4-1.png" medium="image" type="image/png" width="1248" height="1536"/>
+    </item>
     <item>
       <title>Histórico de Taxas de Juros em Dólar no Brasil</title>
       <dc:creator>Wilson Freitas</dc:creator>
