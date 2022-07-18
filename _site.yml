@@ -12,6 +12,8 @@ navbar:
       href: index.html
     - text: "Sobre"
       href: about.html
+    - text: "cursos"
+      href: courses.html
     - text: "Projetos"
       menu:
       - text: R

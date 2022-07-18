@@ -1,5 +1,6 @@
 ---
 title: "16 anos de Curva Prefixada"
+draft: true
 author:
   - name: Wilson Freitas
     url: {}
@@ -77,7 +78,7 @@ df_di1_futures <- df_di1 |>
     maturity_date = maturity2date(maturity_code),
     fixing = following(maturity_date, "Brazil/ANBIMA"),
     business_days = bizdays(refdate, fixing, "Brazil/ANBIMA"),
-    adjusted_tax = rates("discrete", business_days / 252, 100000 / price)
+    adjusted_tax = implied_rate("discrete", business_days / 252, 100000 / price)
   ) |>
   filter(business_days > 0)
 ```

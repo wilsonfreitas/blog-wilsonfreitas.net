@@ -1,0 +1,106 @@
+---
+title: "Cursos"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Renda Fixa usando R
+
+https://p.eduzz.com/942050
+
+O curso "Renda Fixa usando R" se divide em 9 módulos, trazendo uma visão de operações com taxas de juros e regimes de capitalização, definindo conceitos de valor do dinheiro no tempo e valor presente de fluxos de caixa.
+
+Implementa a construção da estrutura a termo de taxas de juros (ETTJ) e alguns métodos de interpolação de taxas.
+
+São apresentadas metodologias de apreçamento de instrumentos de renda fixa pré-fixados, pós-fixados e indexados.
+
+A teoria será abordada sempre de forma leve e concomitante com exemplos práticos.
+
+ Módulo 1: Valor do dinheiro no tempo
+
+Valor presente de um fluxo futuro
+Módulo 2: Regimes de capitalização
+
+Taxas de juros simples
+Taxas de juros compostos
+Taxas de juros contínuos
+Módulo 3: Operações com Fluxo de Caixa
+
+Exemplos de Operações com Fluxo de Caixa
+TIR (Taxa Interna de Retorno)
+Módulo 4: Precificação de Instrumentos de Renda Fixa Pré-fixados
+
+Bullet Bonds Pré-fixados: LTN, CDB
+Bonds Pré-fixados: NTN-F
+Módulo 5: Precificação de Instrumentos de Renda Fixa Indexados
+
+Bullet Bonds Indexados: NTN-B (Tesouro IPCA Principal)
+Bonds Indexados: NTN-B (Tesouro IPCA)
+Módulo 6: Curva de Juros - Estrutura a Termo de Taxas de Juros (ETTJ)
+
+Taxas à vista
+Taxas a termo
+Módulo 7: Interpolação da Estrutura a Termo de Taxas de Juros (ETTJ)
+
+Interpolação Linear
+Interpolação Flat-forward
+Interpolação Spline
+Módulo 8: Precificação de Instrumentos de Renda Fixa Pós-fixados
+
+Bullet Bonds Pós-fixados: LFT, CDB CDI + taxa, CDB %CDI
+Módulo 9: Precificação de Instrumentos de Renda Fixa com Amortização (Debêntures)
+
+Bonds Pré-fixados Com Amortização
+Bonds Indexados Com Amortização
+Bonds Pós-fixados Com Amortização
+
+
+## Construindo Banco de Dados Financeiros
+
+<!-- coleta de dados -->
+
+https://p.eduzz.com/996977
+
+O curso "Construindo Banco de Dados Financeiros" tem uma abordagem 100% mão na massa para a construção de um banco de dados com diversos dados do mercado financeiro referentes a diversos contratos negociados no mercado.
+
+Totalmente desenvolvido com a linguagem de programação e análise de dados R.
+Passa por diversos pacotes para processamento de dados, leitura de arquivos: texto, json, csv, xml, operações em banco de dados relacional e consumo de APIs on-line.
+
+O objetivo é construir um sistema DO ZERO para automatizar o processo de download de dados financeiros de diversas fontes do mercado financeiro (B3, ANBIMA, BACEN, TesouroDireto), criando um repositório de dados para o processamento e o enriquecimento dos dados para que sejam usados em diversas análises.
+
+Serão desenvolvidos os processos de download e armazenamento dos dados brutos e, posteriormente, o processo de enriquecimento que transforma os dados brutos em dados estruturados.
+
+No fim, serão criadas funções no R para consumir os dados estruturados e utilizá-los nas mais diversas análises.
+
+
+Módulo 1: Construção do processo de downloads e tratamento de dados
+Download e processamento: CDI/IDI da B3
+Módulo 2: Criação de um banco de dados para armazenamento dos dados (mini tutorial de SQL)
+
+Criação de um banco de dados SQLite
+SQL e operações CRUD (Create Read Update Delete)
+Módulo 3: Download e processamento de Indicadores Financeiros do Banco Central
+
+Download e processamento de Indicadores Financeiros do Banco Central: IPCA, IGP-M, SELIC e Moedas
+Processamento para geração do Número Índice dos indicadores financeiros: SELIC, IPCA, IGP-M
+Módulo 4: Download e processamento de Indicadores Financeiros da ANBIMA
+
+Download e processamento:
+Projeções de Inflação (IGP-M e IPCA) da ANBIMA
+VNA de Títulos Públicos da ANBIMA
+Preços e Taxas Títulos Públicos da ANBIMA
+Módulo 5: Download e processamento do Cadastro de Instrumentos da B3
+
+Download e processamento do arquivo de Cadastro de Instrumentos (dados cadastrais de instrumentos) da B3 para Ações e Futuros
+Módulo 6: Download e processamento do Boletim de Negociação da B3
+
+Download e processamento do arquivo Boletim de Negociação da B3 (Dados diários) para Ações e Futuros
+Módulo 7: Ajuste dos preços de Ações devido aos eventos corporativos
+
+Ajuste de retornos de Ações devido aos eventos corporativos (desdobramento, grupamento, etc)
+Módulo 8: Download e processamento de Curvas de Juros
+
+Processamento para geração da Curva de Juros Prefixada
+Download e processamento das Curvas da ANBIMA
