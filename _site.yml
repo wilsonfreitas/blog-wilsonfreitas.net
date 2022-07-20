@@ -13,7 +13,11 @@ navbar:
     - text: "Sobre"
       href: about.html
     - text: "Cursos"
-      href: courses.html
+      menu:
+      - text: Construindo Banco de Dados Financeiros
+        href: bancodedados.html
+      - text: Renda Fixa usando R
+        href: rendafixa.html
     - text: "Projetos"
       menu:
       - text: R

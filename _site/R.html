@@ -2108,7 +2108,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="nav-right">
 <a href="index.html">Home</a>
 <a href="about.html">Sobre</a>
-<a href="courses.html">Cursos</a>
+<div class="nav-dropdown">
+<button class="nav-dropbtn">
+Cursos
+ 
+<span class="down-arrow">&#x25BE;</span>
+</button>
+<div class="nav-dropdown-content">
+<a href="bancodedados.html">Construindo Banco de Dados Financeiros</a>
+<a href="rendafixa.html">Renda Fixa usando R</a>
+</div>
+</div>
 <div class="nav-dropdown">
 <button class="nav-dropbtn">
 Projetos
@@ -2158,18 +2168,21 @@ Projetos
 </nav>
 </div>
 <h2 id="rb3">rb3📦</h2>
+<p><img src="images/rb3.png" style="width:30.0%" /></p>
 <p>Os arquivos disponibilizados no mercado financeiro brasileiro são da idade da pedra. Definitivamente não há um padrão, o que torna difícil o trabalho de quem faz análise de dados do mercado financeiro brasileiro. O pacote <a href="https://github.com/wilsonfreitas/rb3">rb3</a>, ataca este problema criando <em>parsers</em> para todos os arquivos divulgados pela <a href="https://b3.com.br">B3</a>. Estes arquivos contem informação de diversos contratos negociados na Bolsa, de onde é possível extrair diversos insumos para análise de negociação e gestão de risco.</p>
 <ul>
 <li><a href="https://github.com/wilsonfreitas/rb3">Repositório</a></li>
 <li><a href="http://wilsonfreitas.github.io/rb3">Site</a></li>
 </ul>
 <h2 id="fixedincome">fixedincome📦</h2>
+<p><img src="images/fixedincome.png" style="width:30.0%" /></p>
 <p><code>fixedincome</code> é um pacote para realizar cálculos de renda fixa. É bastante específico para quem trabalha com finanças. O objetivo é trabalhar com cálculos de envolvendo taxas de juros de forma estruturada e limpa.</p>
 <ul>
 <li><a href="https://github.com/wilsonfreitas/R-fixedincome">Repositório</a></li>
 <li><a href="http://wilsonfreitas.github.io/R-fixedincome">Site</a></li>
 </ul>
 <h2 id="copom">copom📦</h2>
+<p><img src="images/copom.png" style="width:30.0%" /></p>
 <p>No Brasil, temos as reuniões do COPOM (Comitê de Política Monetária do Banco Central) onde os rumos da política monetária do pais são decididos. As decisões do COPOM, que determinam as taxas de juros de curto prazo, influenciam a dinâmica das curvas de juros. Dessa maneira, é possível extrair da curva de juros as expectativas de mercado das decisões do COPOM.</p>
 <p>Algumas abordagens são implementadas no pacote <code>copom</code>.</p>
 <ul>
@@ -2177,16 +2190,19 @@ Projetos
 <li><a href="http://wilsonfreitas.github.io/copom">Site</a></li>
 </ul>
 <h2 id="oplib">oplib📦</h2>
+<p><img src="images/oplib.png" style="width:30.0%" /></p>
 <p><code>oplib</code> implementa diversos modelos de pricing para opções e cálculo de volatilidade implícita aplicados a opções de ações, índices, moedas e taxas de juros.</p>
 <ul>
 <li><a href="https://github.com/wilsonfreitas/oplib">Repositório</a></li>
 </ul>
 <h2 id="rbcb">rbcb📦</h2>
+<p><img src="images/rbcb.png" style="width:30.0%" /></p>
 <p><a href="https://github.com/wilsonfreitas/rbcb">rbcb</a> é mais um pacote R na missão de estruturar os dados utilizados no mercado financeiro brasileiro, neste caso, dados publicados pelo Banco Central do Brasil (BCB) no seu portal de dados abertos. Este pacote baixa as séries divulgadas pelo BCB e disponibiliza em estruturas de dados no R.</p>
 <ul>
 <li><a href="https://github.com/wilsonfreitas/rbcb">Repositório</a></li>
 </ul>
 <h2 id="bizdays">bizdays📦</h2>
+<p><img src="images/bizdays.png" style="width:30.0%" /></p>
 <p><code>bizdays</code> é um pacote para contagem de dias úteis. Foi originalmente escrito em R e depois foi portado para Python.</p>
 <p>Hoje tem muito mais do que dias úteis:</p>
 <ul>

@@ -1,0 +1,62 @@
+---
+title: "Renda Fixa usando R"
+description: |
+  Realizar o apreçamento de títulos de renda fixa utilizando R.
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+[Link para o curso](https://p.eduzz.com/942050)
+
+O curso **Renda Fixa usando R** se divide em 9 módulos, trazendo uma visão de operações com taxas de juros e regimes de capitalização, definindo conceitos de valor do dinheiro no tempo e valor presente de fluxos de caixa.
+
+Implementa a construção da estrutura a termo de taxas de juros (ETTJ) e alguns métodos de interpolação de taxas.
+
+São apresentadas metodologias de apreçamento de instrumentos de renda fixa pré-fixados, pós-fixados e indexados.
+
+A teoria será abordada sempre de forma leve e concomitante com exemplos práticos.
+
+### Conteúdo
+
+## Módulo 1: Valor do dinheiro no tempo
+
+Valor presente de um fluxo futuro
+
+## Módulo 2: Regimes de capitalização
+
+Taxas de juros simples
+Taxas de juros compostos
+Taxas de juros contínuos
+
+## Módulo 3: Operações com Fluxo de Caixa
+
+Exemplos de Operações com Fluxo de Caixa TIR (Taxa Interna de Retorno)
+
+## Módulo 4: Precificação de Instrumentos de Renda Fixa Pré-fixados
+
+Bullet Bonds Pré-fixados: LTN, CDB Bonds Pré-fixados: NTN-F
+
+## Módulo 5: Precificação de Instrumentos de Renda Fixa Indexados
+
+Bullet Bonds Indexados: NTN-B (Tesouro IPCA Principal)
+Bonds Indexados: NTN-B (Tesouro IPCA)
+
+## Módulo 6: Curva de Juros - Estrutura a Termo de Taxas de Juros (ETTJ)
+
+Taxas à vista Taxas a termo
+
+## Módulo 7: Interpolação da Estrutura a Termo de Taxas de Juros (ETTJ)
+
+Interpolação Linear Interpolação Flat-forward Interpolação Spline
+
+## Módulo 8: Precificação de Instrumentos de Renda Fixa Pós-fixados
+
+Bullet Bonds Pós-fixados: LFT, CDB CDI + taxa, CDB %CDI
+
+## Módulo 9: Precificação de Instrumentos de Renda Fixa com Amortização (Debêntures)
+
+Bonds Pré-fixados Com Amortização
+Bonds Indexados Com Amortização
+Bonds Pós-fixados Com Amortização
