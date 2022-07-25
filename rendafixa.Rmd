@@ -8,6 +8,10 @@ description: |
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+```{r, echo=FALSE}
+df <- readxl::read_excel("data/rfr.xlsx")
+```
+
 [Link para o curso](https://p.eduzz.com/942050)
 
 O curso **Renda Fixa usando R** se divide em 9 módulos, trazendo uma visão de operações com taxas de juros e regimes de capitalização, definindo conceitos de valor do dinheiro no tempo e valor presente de fluxos de caixa.
@@ -18,11 +22,46 @@ São apresentadas metodologias de apreçamento de instrumentos de renda fixa pr�
 
 A teoria será abordada sempre de forma leve e concomitante com exemplos práticos.
 
+```{r echo=FALSE}
+total_duration <- df |>
+  summarize(total_duration = hms(
+    seconds = as.integer(sum(duration) / 1000) %% 60,
+    minutes = as.integer(sum(duration) / (1000 * 60)) %% 60,
+    hours = as.integer(sum(duration) / (60 * 60 * 1000))
+  )) |>
+  pull(total_duration)
+```
+
+**Duração**: `r total_duration`
+
 ### Conteúdo
 
 ## Módulo 1: Valor do dinheiro no tempo
 
 Valor presente de um fluxo futuro
+
+```{r echo=FALSE}
+total_duration <- df |>
+  filter(section == 1) |>
+  summarize(total_duration = hms(
+    seconds = as.integer(sum(duration) / 1000) %% 60,
+    minutes = as.integer(sum(duration) / (1000 * 60)) %% 60,
+    hours = as.integer(sum(duration) / (60 * 60 * 1000))
+  )) |>
+  pull(total_duration)
+```
+
+**Duração**: `r total_duration`
+
+```{r}
+df |>
+  filter(section == 1) |>
+  select(order, title, time) |>
+  mutate(time = format(time, "%M:%S")) |>
+  rename(`#` = order, Aula = title, `Duração` = time) |>
+  knitr::kable()
+```
+
 
 ## Módulo 2: Regimes de capitalização
 
@@ -30,33 +69,216 @@ Taxas de juros simples
 Taxas de juros compostos
 Taxas de juros contínuos
 
+```{r echo=FALSE}
+total_duration <- df |>
+  filter(section == 2) |>
+  summarize(total_duration = hms(
+    seconds = as.integer(sum(duration) / 1000) %% 60,
+    minutes = as.integer(sum(duration) / (1000 * 60)) %% 60,
+    hours = as.integer(sum(duration) / (60 * 60 * 1000))
+  )) |>
+  pull(total_duration)
+```
+
+**Duração**: `r total_duration`
+
+```{r}
+df |>
+  filter(section == 2) |>
+  select(order, title, time) |>
+  mutate(time = format(time, "%M:%S")) |>
+  rename(`#` = order, Aula = title, `Duração` = time) |>
+  knitr::kable()
+```
+
 ## Módulo 3: Operações com Fluxo de Caixa
 
 Exemplos de Operações com Fluxo de Caixa TIR (Taxa Interna de Retorno)
 
+```{r echo=FALSE}
+total_duration <- df |>
+  filter(section == 3) |>
+  summarize(total_duration = hms(
+    seconds = as.integer(sum(duration) / 1000) %% 60,
+    minutes = as.integer(sum(duration) / (1000 * 60)) %% 60,
+    hours = as.integer(sum(duration) / (60 * 60 * 1000))
+  )) |>
+  pull(total_duration)
+```
+
+**Duração**: `r total_duration`
+
+```{r}
+df |>
+  filter(section == 3) |>
+  select(order, title, time) |>
+  mutate(time = format(time, "%M:%S")) |>
+  rename(`#` = order, Aula = title, `Duração` = time) |>
+  knitr::kable()
+```
+
+
 ## Módulo 4: Precificação de Instrumentos de Renda Fixa Pré-fixados
 
 Bullet Bonds Pré-fixados: LTN, CDB Bonds Pré-fixados: NTN-F
+
+```{r echo=FALSE}
+total_duration <- df |>
+  filter(section == 4) |>
+  summarize(total_duration = hms(
+    seconds = as.integer(sum(duration) / 1000) %% 60,
+    minutes = as.integer(sum(duration) / (1000 * 60)) %% 60,
+    hours = as.integer(sum(duration) / (60 * 60 * 1000))
+  )) |>
+  pull(total_duration)
+```
+
+**Duração**: `r total_duration`
+
+```{r}
+df |>
+  filter(section == 4) |>
+  select(order, title, time) |>
+  mutate(time = format(time, "%M:%S")) |>
+  rename(`#` = order, Aula = title, `Duração` = time) |>
+  knitr::kable()
+```
+
 
 ## Módulo 5: Precificação de Instrumentos de Renda Fixa Indexados
 
 Bullet Bonds Indexados: NTN-B (Tesouro IPCA Principal)
 Bonds Indexados: NTN-B (Tesouro IPCA)
 
+```{r echo=FALSE}
+total_duration <- df |>
+  filter(section == 5) |>
+  summarize(total_duration = hms(
+    seconds = as.integer(sum(duration) / 1000) %% 60,
+    minutes = as.integer(sum(duration) / (1000 * 60)) %% 60,
+    hours = as.integer(sum(duration) / (60 * 60 * 1000))
+  )) |>
+  pull(total_duration)
+```
+
+**Duração**: `r total_duration`
+
+```{r}
+df |>
+  filter(section == 5) |>
+  select(order, title, time) |>
+  mutate(time = format(time, "%M:%S")) |>
+  rename(`#` = order, Aula = title, `Duração` = time) |>
+  knitr::kable()
+```
+
+
 ## Módulo 6: Curva de Juros - Estrutura a Termo de Taxas de Juros (ETTJ)
 
 Taxas à vista Taxas a termo
+
+```{r echo=FALSE}
+total_duration <- df |>
+  filter(section == 6) |>
+  summarize(total_duration = hms(
+    seconds = as.integer(sum(duration) / 1000) %% 60,
+    minutes = as.integer(sum(duration) / (1000 * 60)) %% 60,
+    hours = as.integer(sum(duration) / (60 * 60 * 1000))
+  )) |>
+  pull(total_duration)
+```
+
+**Duração**: `r total_duration`
+
+```{r}
+df |>
+  filter(section == 6) |>
+  select(order, title, time) |>
+  mutate(time = format(time, "%M:%S")) |>
+  rename(`#` = order, Aula = title, `Duração` = time) |>
+  knitr::kable()
+```
+
 
 ## Módulo 7: Interpolação da Estrutura a Termo de Taxas de Juros (ETTJ)
 
 Interpolação Linear Interpolação Flat-forward Interpolação Spline
 
+```{r echo=FALSE}
+total_duration <- df |>
+  filter(section == 7) |>
+  summarize(total_duration = hms(
+    seconds = as.integer(sum(duration) / 1000) %% 60,
+    minutes = as.integer(sum(duration) / (1000 * 60)) %% 60,
+    hours = as.integer(sum(duration) / (60 * 60 * 1000))
+  )) |>
+  pull(total_duration)
+```
+
+**Duração**: `r total_duration`
+
+```{r}
+df |>
+  filter(section == 7) |>
+  select(order, title, time) |>
+  mutate(time = format(time, "%M:%S")) |>
+  rename(`#` = order, Aula = title, `Duração` = time) |>
+  knitr::kable()
+```
+
+
 ## Módulo 8: Precificação de Instrumentos de Renda Fixa Pós-fixados
 
 Bullet Bonds Pós-fixados: LFT, CDB CDI + taxa, CDB %CDI
+
+```{r echo=FALSE}
+total_duration <- df |>
+  filter(section == 8) |>
+  summarize(total_duration = hms(
+    seconds = as.integer(sum(duration) / 1000) %% 60,
+    minutes = as.integer(sum(duration) / (1000 * 60)) %% 60,
+    hours = as.integer(sum(duration) / (60 * 60 * 1000))
+  )) |>
+  pull(total_duration)
+```
+
+**Duração**: `r total_duration`
+
+```{r}
+df |>
+  filter(section == 8) |>
+  select(order, title, time) |>
+  mutate(time = format(time, "%M:%S")) |>
+  rename(`#` = order, Aula = title, `Duração` = time) |>
+  knitr::kable()
+```
+
 
 ## Módulo 9: Precificação de Instrumentos de Renda Fixa com Amortização (Debêntures)
 
 Bonds Pré-fixados Com Amortização
 Bonds Indexados Com Amortização
 Bonds Pós-fixados Com Amortização
+
+```{r echo=FALSE}
+total_duration <- df |>
+  filter(section == 9) |>
+  summarize(total_duration = hms(
+    seconds = as.integer(sum(duration) / 1000) %% 60,
+    minutes = as.integer(sum(duration) / (1000 * 60)) %% 60,
+    hours = as.integer(sum(duration) / (60 * 60 * 1000))
+  )) |>
+  pull(total_duration)
+```
+
+**Duração**: `r total_duration`
+
+```{r}
+df |>
+  filter(section == 9) |>
+  select(order, title, time) |>
+  mutate(time = format(time, "%M:%S")) |>
+  rename(`#` = order, Aula = title, `Duração` = time) |>
+  knitr::kable()
+```
+

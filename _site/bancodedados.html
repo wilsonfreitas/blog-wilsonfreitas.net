@@ -2172,33 +2172,681 @@ Projetos
 </div>
 <!-- coleta de dados -->
 <p><a href="https://p.eduzz.com/996977">Link para o curso</a></p>
-<p>O curso <strong>Construindo Banco de Dados Financeiros</strong> tem uma abordagem 100% mão na massa para a construção de um banco de dados a partir da coleta automatizada de diversos dados do mercado financeiro. Os dados são referentes a diversos contratos negociados no mercado e indicadores financeiros necessários para tarefas apreçamento e cálculo de risco.</p>
+<p>Construir um banco de dados financeiros com um processo 100% automático desenvolvido na linguagem R.</p>
+<p>Esta é a proposta desse curso!</p>
+<p>Quem faz análises com dados financeiros sofre com informações espalhadas em diversos lugares, em formatos distintos e atualizadas em momentos diferentes.</p>
+<p>A construção de um repositório único, onde as informações são padronizadas e podem ser acessadas de maneira simples em um banco de dados único.</p>
+<p>O curso <strong>Construindo Banco de Dados Financeiros</strong> tem uma abordagem 100% mão na massa para a construção de um banco de dados a partir da coleta automatizada de diversos dados do mercado financeiro.</p>
+<p>Os dados são referentes a diversos contratos negociados no mercado e indicadores financeiros necessários para tarefas apreçamento e cálculo de risco.</p>
 <p>Todo o conteúdo do curso é totalmente desenvolvido com a linguagem de programação e análise de dados R. Passa por diversos pacotes para processamento de dados, leitura de arquivos: texto, json, csv, xml, operações em banco de dados relacional e consumo de APIs on-line.</p>
 <p>O objetivo é construir um sistema <em>DO ZERO</em> para automatizar o processo de download de dados financeiros de diversas fontes do mercado financeiro (B3, ANBIMA, BACEN, TesouroDireto), criando um repositório de dados para o processamento e o enriquecimento dos dados para que sejam usados em diversas análises.</p>
 <p>Serão desenvolvidos os processos de download e armazenamento dos dados brutos e, posteriormente, o processo de enriquecimento que transforma os dados brutos em dados estruturados.</p>
 <p>No fim, serão criadas funções no R para consumir os dados estruturados e utilizá-los nas mais diversas análises.</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p><strong>Duração</strong>: 07:52:25</p>
 <h2 id="módulo-1-processo-de-downloads-e-tratamento-de-dados">Módulo 1: Processo de Downloads e Tratamento de Dados</h2>
 <p><img src="images/BDF%20Semana%201.png" /></p>
 <p>Desenvolvemos um processo totalmente em R onde o usuário pode, através de arquivos de configuração YAML, definir os dados que serão baixados e incluídos no banco de dados.</p>
 <p>O fato do código ser 100% R permite que, com o passar das aulas, o aluno compreenda cada passo do processo e seja capaz de realizar suas eventuais intervenções.</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p><strong>Duração</strong>: 00:57:50</p>
+<div class="layout-chunk" data-layout="l-body">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">#</th>
+<th style="text-align: left;">Aula</th>
+<th style="text-align: left;">Duração</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Apresentando o Projeto</td>
+<td style="text-align: left;">05:09</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Estrutura de diretórios do Projeto</td>
+<td style="text-align: left;">02:06</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">Arquivos YAML</td>
+<td style="text-align: left;">03:18</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">Pacote yaml</td>
+<td style="text-align: left;">03:03</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">Pacote logger</td>
+<td style="text-align: left;">04:17</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">Configuração do Projeto</td>
+<td style="text-align: left;">06:12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">Criação do MeuDB</td>
+<td style="text-align: left;">06:53</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">Entendendo a função load_configs</td>
+<td style="text-align: left;">03:40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">Executando o Pipeline de dados</td>
+<td style="text-align: left;">04:55</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">Entendendo a função download_data</td>
+<td style="text-align: left;">06:04</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">Funções de download específicas</td>
+<td style="text-align: left;">03:24</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">Webscraping do CDI da B3</td>
+<td style="text-align: left;">07:34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">Encerramento do Módulo 1</td>
+<td style="text-align: left;">01:10</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h3 id="download-e-processamento-da-taxa-di-cdi-e-do-índice-di-idi-da-b3">Download e processamento da Taxa DI (CDI) e do Índice DI (IDI) da B3</h3>
 <p>A Taxa DI é uma das taxa de juros mais importantes utilizadas no Brasil. É a taxa de juros utilizada em diversos contratos negociados no mercado financeiro, como CDBs, Debêntures, LCI, LCA e outros.</p>
 <h2 id="módulo-2-banco-para-armazenamento-dos-dados-mini-tutorial-de-sql">Módulo 2: Banco para Armazenamento dos Dados (Mini Tutorial de SQL)</h2>
 <p>Vamos criar um banco de dados SQLite do zero para o armazenamento dos dados baixados.</p>
 <p>Mini tutorial de SQL e operações CRUD (Create Read Update Delete)</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p><strong>Duração</strong>: 01:13:03</p>
+<div class="layout-chunk" data-layout="l-body">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">#</th>
+<th style="text-align: left;">Aula</th>
+<th style="text-align: left;">Duração</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Introdução a Banco de Dados</td>
+<td style="text-align: left;">04:13</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Criando e inserindo tabelas</td>
+<td style="text-align: left;">07:58</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">Atualizando tabelas</td>
+<td style="text-align: left;">02:16</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">Consultas em tabelas</td>
+<td style="text-align: left;">05:50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">Removendo dados de tabelas</td>
+<td style="text-align: left;">03:02</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">Criação de índices em tabelas</td>
+<td style="text-align: left;">06:00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">Pacote DBI 1</td>
+<td style="text-align: left;">05:58</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">Pacote DBI 2</td>
+<td style="text-align: left;">04:31</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">Pacote DBI 3</td>
+<td style="text-align: left;">02:06</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">Pacote DBI 4</td>
+<td style="text-align: left;">04:21</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">Pacote dbplyr</td>
+<td style="text-align: left;">05:29</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">Criando tabelas no banco de dados MeuDB</td>
+<td style="text-align: left;">03:16</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">Executando o Pipeline de dados inserindo dados no MeuDB</td>
+<td style="text-align: left;">04:19</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">Entendendo a função handle_data</td>
+<td style="text-align: left;">06:06</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15</td>
+<td style="text-align: left;">Entendendo os handlers de parse e insert no Pipeline de dados</td>
+<td style="text-align: left;">07:32</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h2 id="módulo-3-indicadores-financeiros-do-banco-central">Módulo 3: Indicadores Financeiros do Banco Central</h2>
 <p>Download e processamento de Indicadores Financeiros do Banco Central: IPCA, IGP-M, SELIC e Moedas</p>
 <p>Processamento para geração do Número Índice dos indicadores financeiros: SELIC, IPCA, IGP-M</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p><strong>Duração</strong>: 01:06:29</p>
+<div class="layout-chunk" data-layout="l-body">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">#</th>
+<th style="text-align: left;">Aula</th>
+<th style="text-align: left;">Duração</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Download dos dados da SELIC com o pacote rbcb</td>
+<td style="text-align: left;">08:39</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Implementando download da SELIC no Pipeline de dados</td>
+<td style="text-align: left;">05:32</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">Executando o Pipeline de dados com download da SELIC</td>
+<td style="text-align: left;">06:52</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">Implementando parse e insert da SELIC no Pipeline de dados</td>
+<td style="text-align: left;">07:56</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">Implementando download de IPCA e IGP-M no Pipeline de dados</td>
+<td style="text-align: left;">05:28</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">Executando o Pipeline de dados com download de IPCA e IGP-M</td>
+<td style="text-align: left;">02:25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">Executando funções dinamicamente no R</td>
+<td style="text-align: left;">03:39</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">Download de dados de moedas com o pacote rbcb</td>
+<td style="text-align: left;">05:09</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">Listando moedas disponíveis com o rbcb</td>
+<td style="text-align: left;">02:38</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">Executando o Pipeline de dados com download do USD</td>
+<td style="text-align: left;">03:49</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">Implementando insert do USD no Pipeline de dados</td>
+<td style="text-align: left;">04:01</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">Implementando o EUR no Pipeline de dados</td>
+<td style="text-align: left;">02:43</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">Mudança nos downloaders com rbcb</td>
+<td style="text-align: left;">02:18</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">Executando Pipeline de dados em BATCH</td>
+<td style="text-align: left;">05:14</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h2 id="módulo-4-indicadores-financeiros-da-anbima">Módulo 4: Indicadores Financeiros da ANBIMA</h2>
 <p>Projeções de Inflação (IGP-M e IPCA) da ANBIMA VNA de Títulos Públicos da ANBIMA Preços e Taxas Títulos Públicos da ANBIMA</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p><strong>Duração</strong>: 00:59:20</p>
+<div class="layout-chunk" data-layout="l-body">
+<table>
+<colgroup>
+<col style="width: 3%" />
+<col style="width: 86%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">#</th>
+<th style="text-align: left;">Aula</th>
+<th style="text-align: left;">Duração</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Webscraping de projeções de inflação da ANBIMA 1</td>
+<td style="text-align: left;">04:21</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Webscraping de projeções de inflação da ANBIMA 2</td>
+<td style="text-align: left;">11:08</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">Criação de tabela para projeções de inflação da ANBIMA no MeuDB</td>
+<td style="text-align: left;">02:13</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">Executando o Pipeline de dados com projeções de inflação da ANBIMA</td>
+<td style="text-align: left;">03:02</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">Webscraping de VNA de títulos públicos da ANBIMA 1</td>
+<td style="text-align: left;">04:14</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">Webscraping de VNA de títulos públicos da ANBIMA 2</td>
+<td style="text-align: left;">02:13</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">Webscraping de VNA de títulos públicos da ANBIMA 3</td>
+<td style="text-align: left;">04:29</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">Webscraping de VNA de títulos públicos da ANBIMA 4</td>
+<td style="text-align: left;">02:34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">Webscraping de VNA de títulos públicos da ANBIMA 5</td>
+<td style="text-align: left;">05:43</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">Criação de tabela para VNA no MeuDB</td>
+<td style="text-align: left;">01:41</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">Executando o Pipeline de dados com VNA de títulos públicos da ANBIMA</td>
+<td style="text-align: left;">02:31</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">Webscraping de Preços e Taxas de títulos públicos da ANBIMA 1</td>
+<td style="text-align: left;">05:20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">Webscraping de Preços e Taxas de títulos públicos da ANBIMA 2</td>
+<td style="text-align: left;">05:54</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">Criação de tabela para Títulos Públicos no MeuDB</td>
+<td style="text-align: left;">01:40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15</td>
+<td style="text-align: left;">Executando o Pipeline de dados com Títulos Públicos da ANBIMA</td>
+<td style="text-align: left;">02:11</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h2 id="módulo-5-cadastro-de-instrumentos-da-b3">Módulo 5: Cadastro de Instrumentos da B3</h2>
 <p>Download e processamento do arquivo de Cadastro de Instrumentos (dados cadastrais de instrumentos) da B3 para Ações e Futuros</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p><strong>Duração</strong>: 00:57:25</p>
+<div class="layout-chunk" data-layout="l-body">
+<table>
+<colgroup>
+<col style="width: 3%" />
+<col style="width: 89%" />
+<col style="width: 8%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">#</th>
+<th style="text-align: left;">Aula</th>
+<th style="text-align: left;">Duração</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Webscraping da página de Pesquisa do Pregão da B3</td>
+<td style="text-align: left;">04:12</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Executando o Pipeline de dados com download do arquivo de Cadastro de Instrumentos da B3</td>
+<td style="text-align: left;">01:40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">Unzip do arquivo de Cadastro de Instrumentos da B3</td>
+<td style="text-align: left;">04:32</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">Verificando integridade do arquivo zip do site de Pesquisa do Pregão da B3</td>
+<td style="text-align: left;">02:41</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">Pacote XML</td>
+<td style="text-align: left;">09:18</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">Verificando a geração dos arquivos de Cadastro de Instrumentos da B3</td>
+<td style="text-align: left;">04:02</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">Parsing do arquivo de Cadastro de Instrumentos da B3 - Dados de Equities (Ações)</td>
+<td style="text-align: left;">10:36</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">Parsing do arquivo de Cadastro de Instrumentos da B3 - Dados de Futuros</td>
+<td style="text-align: left;">04:07</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">Criação de tabelas para Equities e Futuros no MeuDB</td>
+<td style="text-align: left;">01:54</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">Executando o Pipeline de dados com dados de Equities e Futuros</td>
+<td style="text-align: left;">04:27</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">Investigando os Dados de Equities</td>
+<td style="text-align: left;">05:48</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">Investigando os Dados de Futuros</td>
+<td style="text-align: left;">03:07</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">Planilha com Códigos de Cadastro de Instrumentos da B3</td>
+<td style="text-align: left;">00:55</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h2 id="módulo-6-boletim-de-negociação-da-b3">Módulo 6: Boletim de Negociação da B3</h2>
 <p>Download e processamento do arquivo Boletim de Negociação da B3 (Dados diários) para Ações e Futuros</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p><strong>Duração</strong>: 00:28:26</p>
+<div class="layout-chunk" data-layout="l-body">
+<table>
+<colgroup>
+<col style="width: 3%" />
+<col style="width: 87%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">#</th>
+<th style="text-align: left;">Aula</th>
+<th style="text-align: left;">Duração</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">WebScraping e download do arquivo PricingReport (arquivo de Preços) da B3</td>
+<td style="text-align: left;">04:21</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Criação de tabelas para dados de Preços (PricingReport) no MeuDB</td>
+<td style="text-align: left;">02:42</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">Inserindo os dados de Preços no MeuDB</td>
+<td style="text-align: left;">05:43</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">Executando o Pipeline de dados com dados de Preços (PricingReport)</td>
+<td style="text-align: left;">03:36</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">WebScraping e download do arquivo IndexReport (arquivo de Índices) da B3 1</td>
+<td style="text-align: left;">03:32</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">WebScraping e download do arquivo IndexReport (arquivo de Índices) da B3 2</td>
+<td style="text-align: left;">04:51</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">Criação de tabelas para dados de Índices (IndexReport) no MeuDB</td>
+<td style="text-align: left;">01:15</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">Executando o Pipeline de dados com dados de Índices (IndexReport)</td>
+<td style="text-align: left;">02:24</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h2 id="módulo-7-cálculo-do-preço-ajustado-de-ações">Módulo 7: Cálculo do Preço Ajustado de Ações</h2>
 <p>Ajuste de retornos de Ações devido aos eventos corporativos (desdobramento, grupamento, etc)</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p><strong>Duração</strong>: 01:16:55</p>
+<div class="layout-chunk" data-layout="l-body">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">#</th>
+<th style="text-align: left;">Aula</th>
+<th style="text-align: left;">Duração</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Importando histórico de Equities no MeuDB</td>
+<td style="text-align: left;">05:04</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Importando histórico de Preços no MeuDB</td>
+<td style="text-align: left;">05:04</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">Importando histórico de Futuros no MeuDB</td>
+<td style="text-align: left;">04:15</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">Importando histórico de Índices no MeuDB</td>
+<td style="text-align: left;">03:00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">Gerando histórico de retorno de ações</td>
+<td style="text-align: left;">12:06</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">Calculando EWMA para retornos da B3SA3</td>
+<td style="text-align: left;">06:08</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">Calculando EWMA para retornos de todos os ativos</td>
+<td style="text-align: left;">07:49</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">Executando o cálculo do EWMA no Pipeline de dados</td>
+<td style="text-align: left;">07:14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">Construindo série de preços de ações ajustados 1</td>
+<td style="text-align: left;">08:32</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">Construindo série de preços de ações ajustados 2</td>
+<td style="text-align: left;">04:11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">Executando o cálculo dos preços ajustados no Pipeline de dados</td>
+<td style="text-align: left;">05:52</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">Detectando eventos corporativos nos dados de Equities</td>
+<td style="text-align: left;">07:35</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h2 id="módulo-8-curvas-de-juros">Módulo 8: Curvas de Juros</h2>
 <p>Processamento para geração da Curva de Juros PrefixadaDownload e processamento das Curvas da ANBIMA</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<p><strong>Duração</strong>: 00:52:54</p>
+<div class="layout-chunk" data-layout="l-body">
+<table>
+<colgroup>
+<col style="width: 2%" />
+<col style="width: 89%" />
+<col style="width: 7%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">#</th>
+<th style="text-align: left;">Aula</th>
+<th style="text-align: left;">Duração</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Construção da Curva de Juros Prefixados de Mercado (com dados de Futuros de Taxa DI)</td>
+<td style="text-align: left;">09:36</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Construção da Curva de Juros Prefixados Padronizada em vértices fixos (para risco de mercado)</td>
+<td style="text-align: left;">06:46</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">Executando a construção de curvas de juros no Pipeline de dados</td>
+<td style="text-align: left;">04:29</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">Webscraping da ANBIMA para Obter Curvas de Juros de Governo 1</td>
+<td style="text-align: left;">11:36</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">Webscraping da ANBIMA para Obter Curvas de Juros de Governo 2</td>
+<td style="text-align: left;">14:52</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">Executando o Pipeline de dados com dados das curvas de juros da ANBIMA</td>
+<td style="text-align: left;">05:34</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
