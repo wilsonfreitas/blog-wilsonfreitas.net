@@ -8,7 +8,9 @@ description: |
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-```{r, echo=FALSE}
+```{r load, echo=FALSE}
+library(tidyverse)
+library(hms)
 df <- readxl::read_excel("data/rfr.xlsx")
 ```
 

@@ -47,6 +47,8 @@ No fim, serão criadas funções no R para consumir os dados estruturados e util
 diversas análises.
 
 ```{r, echo=FALSE}
+library(tidyverse)
+library(hms)
 df <- readxl::read_excel("data/dldf.xlsx")
 ```
 

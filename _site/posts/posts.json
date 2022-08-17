@@ -1,5 +1,27 @@
 [
   {
+    "path": "posts/2022-08-17-movimento-da-parte-longa-da-curva-de-juros/",
+    "title": "Movimento da Parte Longa da Curva de Juros",
+    "description": "A reunião do COPOM no começo do mês de agosto de 2022 trouxe um tom que\ninfluenciou a dinâmica da parte longa da curva de juros.\nAqui apresento uma animação do movimento da curva de juros nas duas primeiras semanas de agosto\nde 2022.",
+    "author": [
+      {
+        "name": "Wilson Freitas",
+        "url": {}
+      }
+    ],
+    "date": "2022-08-17",
+    "categories": [
+      "R",
+      "fixedincome",
+      "rb3",
+      "opendata"
+    ],
+    "contents": "\r\nA reunião do COPOM de 3 de agosto trouxe uma mudança na estrutura da curva de juros, tanto para a parte curta como para a parte longa. A interpretação do comunicado por agentes de mercado é de o ciclo de alta de juros está próximo do fim.\r\nNa prática a dinâmica da parte longa da curva de juros foi bastante afetada. Aqui apresento uma animação onde observa-se o movimento da curva de juros nas duas primeiras semanas do mês de agosto de 2022. A reunião do COPOM aconteceu em 3 de agosto. Fica claro pela animação a mudança nas expectativas de longo prazo para a curva.\r\nVamos utilizar o 📦 {rb3} para obter as curvas e o 📦 {fixedincome} na construção dos gráficos da estrutura a termo de juros. A animação é construida com o 📦 {animation}.\r\n\r\n\r\nlibrary(fixedincome)\r\nlibrary(rb3)\r\nlibrary(bizdays)\r\nlibrary(dplyr)\r\nlibrary(ggplot2)\r\n\r\nget_di1_curve <- function(refdate) {\r\n  fut <- futures_get(refdate)\r\n  yc <- yc_get(refdate)\r\n  df <- yc_superset(yc, fut)\r\n\r\n  df_curve <- bind_rows(\r\n    df |> slice(1) |> select(biz_days, r_252),\r\n    df |> filter(!is.na(symbol)) |> select(biz_days, r_252)\r\n  ) |>\r\n    filter(!duplicated(biz_days))\r\n\r\n  spotratecurve(\r\n    df_curve$r_252, df_curve$biz_days, \"discrete\", \"business/252\", \"Brazil/ANBIMA\",\r\n    refdate = refdate\r\n  )\r\n}\r\n\r\n\r\nVamos obter as curvas para os dias úteis entre 2022-08-01 e 2022-08-16 e colocá-las em uma lista. Na sequência a animação será construída com cada uma das curvas da lista, sendo que a primeira curva tem a cor vermelha e a última tem cor azul, as demais curvas são em cinza. O objetivo é acompanhar a evolução das curvas tendo em destaque o começo e fim.\r\n\r\n\r\ndates <- bizseq(\"2022-08-01\", \"2022-08-16\", \"Brazil/ANBIMA\")\r\ncurves <- lapply(seq_along(dates), function(ix) get_di1_curve(dates[ix]))\r\n\r\nanim <- animation::saveGIF(\r\n  {\r\n    g <- autoplot(curves[[1]], curve.x.axis = \"terms\", colour = \"red\") +\r\n      autolayer(curves[[1]], curve.geom = \"point\", curve.x.axis = \"terms\", colour = \"red\") +\r\n      ylim(0.11, 0.14) +\r\n      theme_bw() +\r\n      theme(legend.position = \"none\") +\r\n      labs(\r\n        x = \"Prazos\", y = NULL, title = \"Curvas de Juros Prefixados DI1\",\r\n        subtitle = \"Entre as datas 2022-08-01 e 2022-08-16\",\r\n        caption = \"Desenvolvido por wilsonfreitas / Fonte: B3\"\r\n      )\r\n    print(g)\r\n\r\n    for(curve in curves[-c(1, length(curves))]) {\r\n      g <- g + autolayer(curve, curve.x.axis = \"terms\", colour = \"grey\") +\r\n        autolayer(curve,\r\n          curve.geom = \"point\", curve.x.axis = \"terms\", colour = \"grey\"\r\n        )\r\n      print(g)\r\n    }\r\n\r\n    g <- g + autolayer(curves[[length(curves)]], curve.x.axis = \"terms\", colour = \"blue\") +\r\n      autolayer(curves[[length(curves)]],\r\n        curve.geom = \"point\", curve.x.axis = \"terms\", colour = \"blue\"\r\n      )\r\n    print(g)\r\n  },\r\n  interval = 0.8,\r\n  ani.height = 400,\r\n  ani.width = 704\r\n)\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+    "preview": "posts/2022-08-17-movimento-da-parte-longa-da-curva-de-juros/animation.gif",
+    "last_modified": "2022-08-17T07:25:40-03:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2022-06-18-16-anos-de-curva-prefixada/",
     "title": "16 anos de Curva Prefixada",
     "description": "Observando a dinâmica da estrutura a termo de juros no Brasil e nos Estados\nUnidos ao longo dos últimos 16 anos.",
