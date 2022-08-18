@@ -1,7 +1,8 @@
 ---
 title: "Super Datasets do Pacote rb3"
 description: |
-  A short description of the post.
+  O pacote {rb3} traz funções que retornam *super datasets*, conjuntos de dados mais ricos juntando
+  a informação de diferentes datasets obtidos com as funções do pacote.
 author:
   - name: Wilson Freitas
     url: {}
@@ -106,7 +107,7 @@ ggspotratecurveplot(curve)
 
 Visualizando para um horizonte mais curto e adicionando as taxas a termo.
 
-```{r}
+```{r preview=TRUE}
 curve_2y <- curve |> fixedincome::first("2 years")
 ggspotratecurveplot(curve_2y) +
   ggplot2::autolayer(forwardrate(curve_2y))

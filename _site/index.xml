@@ -28,10 +28,11 @@ de 2022.</description>
       <title>Super Datasets do Pacote rb3</title>
       <dc:creator>Wilson Freitas</dc:creator>
       <link>https://wilsonfreitas.net/posts/2022-06-19-super-datasets-do-pacote-rb3</link>
-      <description>A short description of the post.</description>
+      <description>O pacote {rb3} traz funções que retornam *super datasets*, conjuntos de dados mais ricos juntando
+a informação de diferentes datasets obtidos com as funções do pacote.</description>
       <guid>https://wilsonfreitas.net/posts/2022-06-19-super-datasets-do-pacote-rb3</guid>
       <pubDate>Sun, 19 Jun 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://wilsonfreitas.net/posts/2022-06-19-super-datasets-do-pacote-rb3/super-datasets-do-pacote-rb3_files/figure-html5/unnamed-chunk-5-1.png" medium="image" type="image/png" width="1248" height="768"/>
+      <media:content url="https://wilsonfreitas.net/posts/2022-06-19-super-datasets-do-pacote-rb3/super-datasets-do-pacote-rb3_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
       <title>16 anos de Curva Prefixada</title>
