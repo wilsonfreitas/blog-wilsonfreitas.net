@@ -14,7 +14,23 @@ library(hms)
 df <- readxl::read_excel("data/rfr.xlsx")
 ```
 
-[Link para o curso](https://p.eduzz.com/942050)
+<style>
+.fcc-btn {
+  background-color: #199319;
+  color: white;
+  padding: 25px;
+  font-weight: bold;
+  width: 100%;
+  font-size: 200%;
+}
+</style>
+
+<center>
+<br/>
+<a target="_blank" class="fcc-btn" href="https://p.eduzz.com/942050">Link para o Curso</a>  
+<br/>
+<br/>
+</center>
 
 O curso **Renda Fixa usando R** se divide em 9 módulos, trazendo uma visão de operações com taxas de juros e regimes de capitalização, definindo conceitos de valor do dinheiro no tempo e valor presente de fluxos de caixa.
 
@@ -284,3 +300,9 @@ df |>
   knitr::kable()
 ```
 
+<center>
+<br/>
+<a target="_blank" class="fcc-btn" href="https://p.eduzz.com/942050">Link para o Curso</a>  
+<br/>
+<br/>
+</center>

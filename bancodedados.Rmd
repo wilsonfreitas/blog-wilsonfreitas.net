@@ -11,7 +11,23 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <!-- coleta de dados -->
 
-[Link para o curso](https://p.eduzz.com/996977)
+<style>
+.fcc-btn {
+  background-color: #199319;
+  color: white;
+  padding: 25px;
+  font-weight: bold;
+  width: 100%;
+  font-size: 200%;
+}
+</style>
+
+<center>
+<br/>
+<a target="_blank" class="fcc-btn" href="https://p.eduzz.com/996977">Link para o Curso</a>  
+<br/>
+<br/>
+</center>
 
 Construir um banco de dados financeiros com um processo 100% automático desenvolvido na linguagem R.
 
@@ -290,3 +306,11 @@ df |>
   rename(`#` = order, Aula = title, `Duração` = time) |>
   knitr::kable()
 ```
+
+<center>
+<br/>
+<a target="_blank" class="fcc-btn" href="https://p.eduzz.com/996977">Link para o Curso</a>  
+<br/>
+<br/>
+</center>
+
