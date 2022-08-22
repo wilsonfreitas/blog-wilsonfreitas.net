@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
   <meta name="generator" content="distill" />
-  <link rel="alternate" type="application/rss+xml" href="https://wilsonfreitas.net/index.xml" />
 
   <style type="text/css">
   /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
@@ -89,635 +88,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>Wilson Freitas</title>
+  <title>Super Datasets para Opções de Ações</title>
+
+  <meta property="description" itemprop="description" content="Um dos super datasets do pacote {rb3} é o de opções de ações.&#10;Com este dataset é possível realizar diversos cálculos com dados de opções de ações, como&#10;calcular a volatilidade implícita das opções, as gregas e até mesmo fazer o ajuste de&#10;modelos teóricos."/>
 
 
-
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2022-06-24"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-06-24"/>
+  <meta name="article:author" content="Wilson Freitas"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Wilson Freitas"/>
+  <meta property="og:title" content="Super Datasets para Opções de Ações"/>
   <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Um dos super datasets do pacote {rb3} é o de opções de ações.&#10;Com este dataset é possível realizar diversos cálculos com dados de opções de ações, como&#10;calcular a volatilidade implícita das opções, as gregas e até mesmo fazer o ajuste de&#10;modelos teóricos."/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="Wilson Freitas"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Wilson Freitas"/>
+  <meta property="twitter:title" content="Super Datasets para Opções de Ações"/>
+  <meta property="twitter:description" content="Um dos super datasets do pacote {rb3} é o de opções de ações.&#10;Com este dataset é possível realizar diversos cálculos com dados de opções de ações, como&#10;calcular a volatilidade implícita das opções, as gregas e até mesmo fazer o ajuste de&#10;modelos teóricos."/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","listing"]}},"value":[{"type":"character","attributes":{},"value":["Wilson Freitas"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"character","attributes":{},"value":["posts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Super Datasets para Opções de Ações"]},{"type":"character","attributes":{},"value":["Um dos super datasets do pacote {rb3} é o de opções de ações.\nCom este dataset é possível realizar diversos cálculos com dados de opções de ações, como\ncalcular a volatilidade implícita das opções, as gregas e até mesmo fazer o ajuste de\nmodelos teóricos.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Wilson Freitas"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["2022-06-24"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["super-datasets-para-opcoes-de-acoes_files/anchor-4.2.2/anchor.min.js","super-datasets-para-opcoes-de-acoes_files/bowser-1.9.3/bowser.min.js","super-datasets-para-opcoes-de-acoes_files/distill-2.2.21/template.v2.js","super-datasets-para-opcoes-de-acoes_files/figure-html5/delta-vol-1.png","super-datasets-para-opcoes-de-acoes_files/figure-html5/strike-vol-1.png","super-datasets-para-opcoes-de-acoes_files/header-attrs-2.14/header-attrs.js","super-datasets-para-opcoes-de-acoes_files/jquery-3.6.0/jquery-3.6.0.js","super-datasets-para-opcoes-de-acoes_files/jquery-3.6.0/jquery-3.6.0.min.js","super-datasets-para-opcoes-de-acoes_files/jquery-3.6.0/jquery-3.6.0.min.map","super-datasets-para-opcoes-de-acoes_files/popper-2.6.0/popper.min.js","super-datasets-para-opcoes-de-acoes_files/tippy-6.2.7/tippy-bundle.umd.min.js","super-datasets-para-opcoes-de-acoes_files/tippy-6.2.7/tippy-light-border.css","super-datasets-para-opcoes-de-acoes_files/tippy-6.2.7/tippy.css","super-datasets-para-opcoes-de-acoes_files/tippy-6.2.7/tippy.umd.min.js","super-datasets-para-opcoes-de-acoes_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
   <!--radix_placeholder_navigation_in_header-->
-  <meta name="distill:offset" content=""/>
-
-  <script type="application/javascript">
-
-    window.headroom_prevent_pin = false;
-
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        tolerance: 5,
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-
-      // responsive menu
-      $('.distill-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
-  </script>
-
-  <style type="text/css">
-
-  /* Theme (user-documented overrideables for nav appearance) */
-
-  .distill-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #0F2E3D;
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .distill-site-nav a:hover {
-    color: white;
-  }
-
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-
-  .distill-site-header {
-
-  }
-
-  .distill-site-footer {
-
-  }
-
-
-  /* Site Header */
-
-  .distill-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-
-  .distill-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-
-
-  .distill-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-
-  .distill-site-header a,
-  .distill-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-
-  .distill-site-header .title {
-    font-size: 18px;
-    min-width: 150px;
-  }
-
-  .distill-site-header .logo {
-    padding: 0;
-  }
-
-  .distill-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-
-  .distill-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-
-
-
-  @media screen and (min-width: 1000px) {
-    .distill-site-header .logo img {
-      display: inline-block;
-    }
-    .distill-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .distill-site-header .title {
-      padding-left: 12px;
-    }
-  }
-
-
-  .distill-site-header .nav-toggle {
-    display: none;
-  }
-
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-dropdown-active {
-    display: block;
-  }
-
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
-    .distill-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .distill-site-header .title {
-      margin-left: 0;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 0;
-    }
-    .distill-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header.responsive {position: relative; min-height: 500px; }
-    .distill-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .distill-site-header.responsive a,
-    .distill-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .distill-site-header.responsive .nav-left,
-    .distill-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .distill-site-header.responsive .nav-dropdown {float: none;}
-    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
-    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-
-  /* Site Footer */
-
-  .distill-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-
-  /* Headroom */
-
-  d-title {
-    padding-top: 6rem;
-  }
-
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-
-  .headroom--unpinned {
-    top: -100px;
-  }
-
-  .headroom--pinned {
-    top: 0;
-  }
-
-  /* adjust viewport for navbar height */
-  /* helps vertically center bootstrap (non-distill) content */
-  .min-vh-100 {
-    min-height: calc(100vh - 100px) !important;
-  }
-
-  </style>
-
-  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
-  <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
-  <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
-
-  <script type="application/javascript">
-
-  function getMeta(metaName) {
-    var metas = document.getElementsByTagName('meta');
-    for (let i = 0; i < metas.length; i++) {
-      if (metas[i].getAttribute('name') === metaName) {
-        return metas[i].getAttribute('content');
-      }
-    }
-    return '';
-  }
-
-  function offsetURL(url) {
-    var offset = getMeta('distill:offset');
-    return offset ? offset + '/' + url : url;
-  }
-
-  function createFuseIndex() {
-
-    // create fuse index
-    var options = {
-      keys: [
-        { name: 'title', weight: 20 },
-        { name: 'categories', weight: 15 },
-        { name: 'description', weight: 10 },
-        { name: 'contents', weight: 5 },
-      ],
-      ignoreLocation: true,
-      threshold: 0
-    };
-    var fuse = new window.Fuse([], options);
-
-    // fetch the main search.json
-    return fetch(offsetURL('search.json'))
-      .then(function(response) {
-        if (response.status == 200) {
-          return response.json().then(function(json) {
-            // index main articles
-            json.articles.forEach(function(article) {
-              fuse.add(article);
-            });
-            // download collections and index their articles
-            return Promise.all(json.collections.map(function(collection) {
-              return fetch(offsetURL(collection)).then(function(response) {
-                if (response.status === 200) {
-                  return response.json().then(function(articles) {
-                    articles.forEach(function(article) {
-                      fuse.add(article);
-                    });
-                  })
-                } else {
-                  return Promise.reject(
-                    new Error('Unexpected status from search index request: ' +
-                              response.status)
-                  );
-                }
-              });
-            })).then(function() {
-              return fuse;
-            });
-          });
-
-        } else {
-          return Promise.reject(
-            new Error('Unexpected status from search index request: ' +
-                        response.status)
-          );
-        }
-      });
-  }
-
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-
-    // get search element (bail if we don't have one)
-    var searchEl = window.document.getElementById('distill-search');
-    if (!searchEl)
-      return;
-
-    createFuseIndex()
-      .then(function(fuse) {
-
-        // make search box visible
-        searchEl.classList.remove('hidden');
-
-        // initialize autocomplete
-        var options = {
-          autoselect: true,
-          hint: false,
-          minLength: 2,
-        };
-        window.autocomplete(searchEl, options, [{
-          source: function(query, callback) {
-            const searchOptions = {
-              isCaseSensitive: false,
-              shouldSort: true,
-              minMatchCharLength: 2,
-              limit: 10,
-            };
-            var results = fuse.search(query, searchOptions);
-            callback(results
-              .map(function(result) { return result.item; })
-            );
-          },
-          templates: {
-            suggestion: function(suggestion) {
-              var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
-                ? `<img src="${offsetURL(suggestion.preview)}"</img>`
-                : '';
-              var html = `
-                <div class="search-item">
-                  <h3>${suggestion.title}</h3>
-                  <div class="search-item-description">
-                    ${suggestion.description || ''}
-                  </div>
-                  <div class="search-item-preview">
-                    ${img}
-                  </div>
-                </div>
-              `;
-              return html;
-            }
-          }
-        }]).on('autocomplete:selected', function(event, suggestion) {
-          window.location.href = offsetURL(suggestion.path);
-        });
-        // remove inline display style on autocompleter (we want to
-        // manage responsive display via css)
-        $('.algolia-autocomplete').css("display", "");
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-
-  });
-
-  </script>
-
-  <style type="text/css">
-
-  .nav-search {
-    font-size: x-small;
-  }
-
-  /* Algolioa Autocomplete */
-
-  .algolia-autocomplete {
-    display: inline-block;
-    margin-left: 10px;
-    vertical-align: sub;
-    background-color: white;
-    color: black;
-    padding: 6px;
-    padding-top: 8px;
-    padding-bottom: 0;
-    border-radius: 6px;
-    border: 1px #0F2E3D solid;
-    width: 180px;
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-nav .algolia-autocomplete {
-      display: none;
-      visibility: hidden;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete {
-      display: inline-block;
-      visibility: visible;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
-      margin-left: 0;
-      width: 400px;
-      max-height: 400px;
-    }
-  }
-
-  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
-    width: 90%;
-    outline: none;
-    border: none;
-  }
-
-  .algolia-autocomplete .aa-hint {
-    color: #999;
-  }
-  .algolia-autocomplete .aa-dropdown-menu {
-    width: 550px;
-    max-height: 70vh;
-    overflow-x: visible;
-    overflow-y: scroll;
-    padding: 5px;
-    margin-top: 3px;
-    margin-left: -150px;
-    background-color: #fff;
-    border-radius: 5px;
-    border: 1px solid #999;
-    border-top: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
-    cursor: pointer;
-    padding: 5px 4px;
-    border-bottom: 1px solid #eee;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
-    border-bottom: none;
-    margin-bottom: 2px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
-    overflow: hidden;
-    font-size: 0.8em;
-    line-height: 1.4em;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
-    font-size: 1rem;
-    margin-block-start: 0;
-    margin-block-end: 5px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
-    display: inline-block;
-    overflow: hidden;
-    height: 2.8em;
-    width: 80%;
-    margin-right: 4%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
-    display: inline-block;
-    width: 15%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
-    height: 3em;
-    width: auto;
-    display: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
-    display: initial;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
-    background-color: #eee;
-  }
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  </style>
-
-
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
 
@@ -2065,486 +1468,186 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
-  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
-  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
-  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
-  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
-  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="super-datasets-para-opcoes-de-acoes_files/header-attrs-2.14/header-attrs.js"></script>
+  <script src="super-datasets-para-opcoes-de-acoes_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="super-datasets-para-opcoes-de-acoes_files/popper-2.6.0/popper.min.js"></script>
+  <link href="super-datasets-para-opcoes-de-acoes_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="super-datasets-para-opcoes-de-acoes_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="super-datasets-para-opcoes-de-acoes_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="super-datasets-para-opcoes-de-acoes_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="super-datasets-para-opcoes-de-acoes_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="super-datasets-para-opcoes-de-acoes_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="super-datasets-para-opcoes-de-acoes_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
-  <script type="text/javascript" cookie-consent="tracking" async src="https://www.googletagmanager.com/gtag/js?id=G-XRV3E6TPHB"></script>
-  <script type="text/javascript" cookie-consent="tracking">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XRV3E6TPHB');
-  </script>
   <!--/radix_placeholder_site_in_header-->
 
 
 </head>
 
-<body class="layout-listing">
+<body>
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Wilson Freitas","authors":[]}
+{"title":"Super Datasets para Opções de Ações","description":"Um dos super datasets do pacote {rb3} é o de opções de ações.\nCom este dataset é possível realizar diversos cálculos com dados de opções de ações, como\ncalcular a volatilidade implícita das opções, as gregas e até mesmo fazer o ajuste de\nmodelos teóricos.","authors":[{"author":"Wilson Freitas","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-06-24T00:00:00.000-03:00","citationText":"Freitas, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="distill-site-nav distill-site-header">
-<div class="nav-left">
-<a href="index.html" class="title">Wilson Freitas</a>
-<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
-</div>
-<div class="nav-right">
-<a href="index.html">Home</a>
-<a href="about.html">Sobre</a>
-<div class="nav-dropdown">
-<button class="nav-dropbtn">
-Cursos
- 
-<span class="down-arrow">&#x25BE;</span>
-</button>
-<div class="nav-dropdown-content">
-<a href="bancodedados.html">Construindo Banco de Dados Financeiros</a>
-<a href="rendafixa.html">Renda Fixa usando R</a>
-</div>
-</div>
-<div class="nav-dropdown">
-<button class="nav-dropbtn">
-Projetos
- 
-<span class="down-arrow">&#x25BE;</span>
-</button>
-<div class="nav-dropdown-content">
-<a href="R.html">R</a>
-<a href="python.html">Python</a>
-<a href="shinyapps.html">Shinyapps</a>
-</div>
-</div>
-<a href="press.html">Apresentações</a>
-<a href="index.xml">
-<i class="fa fa-rss" aria-hidden="true"></i>
-</a>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
-<!--radix_placeholder_article_listing-->
-
-
-<script type="application/javascript">
-
-function init_posts_list() {
-
-  function load_image(img) {
-    var src = $(img).attr('data-src');
-    if (src) {
-      $(img).attr('src', src);
-      $(img).on("load", function() {
-        img.removeAttribute('data-src');
-      });
-    }
-  }
-
-  function set_posts_visible(posts, visible) {
-    if (visible) {
-
-      // show bottom border by default
-      $(posts).removeClass('post-preview-last');
-
-      // apply limits if need be
-      var max_posts = 25;
-      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
-      if (apply_limits && posts.length > max_posts) {
-        posts = $(posts).slice(0, max_posts);
-      } else {
-        $('.posts-more a').addClass('hidden');
-      }
-
-      // apply last style
-      $(posts.slice(-1)[0]).addClass('post-preview-last');
-
-      $(posts).removeClass('hidden');
-      $(posts).find('img[data-src]').each(function(i, img) {
-        load_image(img);
-      });
-    } else {
-      $(posts).addClass('hidden');
-    }
-  }
-
-  function apply_hash_filter() {
-
-    // clear active state
-    $('.categories .active').removeClass('active');
-
-    // mark all posts invisible to start
-    set_posts_visible($('.posts-list').children('a'), false);
-
-    // if we have a hash filter
-    if (window.location.hash && window.location.hash.startsWith("#category:")) {
-
-      // mark posts that match the category visible
-      var page_category = window.location.hash.replace(/^#category:/, "");
-      page_category = decodeURIComponent(page_category)
-      var posts = $('.post-metadata').map(function(idx, script) {
-        var metadata = $.parseJSON($(script).html());
-        var post = null;
-        $.each(metadata.categories, function(idx, category) {
-          category = category.replace(/ /g,"_");
-          if ((page_category || '').toLowerCase() === "articles" || category === page_category) {
-            post = $(script).parent().get();
-            return false;
-          }
-        });
-        return post;
-      });
-      set_posts_visible(posts, true);
-
-      // mark the hash active
-      $('.categories li>a[href="' + decodeURIComponent(window.location.hash) + '"]').addClass('active');
-
-      // update the list_caption
-      var list_caption = $('.posts-list-caption');
-      var caption = (page_category || '').toLowerCase() === "articles"
-        ? list_caption.attr('data-caption')
-        : ('Category: ' + page_category.replace(/_/g," "));
-      list_caption.text(caption);
-
-    } else {
-
-      // no hash filter, make all posts visible (subject to max display)
-      set_posts_visible($('.posts-list').children(), true);
-
-      // reset list caption
-      var list_caption = $('.posts-list-caption');
-      list_caption.text(list_caption.attr('data-caption'));
-
-
-    }
-  }
-
-  // more articles
-  function apply_post_limits(apply) {
-    if (apply) {
-      $('.posts-container').addClass('posts-apply-limit');
-      $('.posts-more a').removeClass('hidden');
-    } else {
-      $('.posts-container').removeClass('posts-apply-limit');
-      $('.posts-more a').addClass('hidden');
-    }
-  }
-
-  // click handling for tags
-  $('.dt-tag').click(function(ev) {
-    window.location.hash = '#category:' + $(this).text().replace(/ /g, "_");
-    return false;
-  })
-
-  // hash filter handling
-  apply_hash_filter();
-  $(window).on('hashchange',function() {
-    apply_post_limits(true);
-    apply_hash_filter();
-  });
-
-  // more articles link
-  $('.posts-more a').click(function(e) {
-    e.preventDefault();
-    apply_post_limits(false);
-    apply_hash_filter();
-    return false;
-  });
-
-}
-
-</script>
-
-
-
-<div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
-<div class="posts-list">
-<h1 class="posts-list-caption" data-caption="Wilson Freitas">Wilson Freitas</h1>
-<a href="posts/2022-08-17-movimento-da-parte-longa-da-curva-de-juros/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["R","fixedincome","rb3","opendata"]}</script>
-<div class="metadata">
-<div class="publishedDate">Aug. 17, 2022</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2022-08-17-movimento-da-parte-longa-da-curva-de-juros/animation.gif"/>
-</div>
-<div class="description">
-<h2>Movimento da Parte Longa da Curva de Juros</h2>
-<div class="dt-tags">
-<div class="dt-tag">R</div>
-<div class="dt-tag">fixedincome</div>
-<div class="dt-tag">rb3</div>
-<div class="dt-tag">opendata</div>
-</div>
-<p>A reunião do COPOM no começo do mês de agosto de 2022 trouxe um tom que
-influenciou a dinâmica da parte longa da curva de juros.
-Aqui apresento uma animação do movimento da curva de juros nas duas primeiras semanas de agosto
-de 2022.</p>
-</div>
-</a>
-<a href="posts/2022-06-24-super-datasets-para-opcoes-de-acoes/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">June 24, 2022</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2022-06-24-super-datasets-para-opcoes-de-acoes/super-datasets-para-opcoes-de-acoes_files/figure-html5/strike-vol-1.png"/>
-</div>
-<div class="description">
-<h2>Super Datasets para Opções de Ações</h2>
-<div class="dt-tags"></div>
-<p>Um dos super datasets do pacote {rb3} é o de opções de ações.
-Com este dataset é possível realizar diversos cálculos com dados de opções de ações, como
-calcular a volatilidade implícita das opções, as gregas e até mesmo fazer o ajuste de
-modelos teóricos.</p>
-</div>
-</a>
-<a href="posts/2022-06-19-super-datasets-do-pacote-rb3/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">June 19, 2022</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2022-06-19-super-datasets-do-pacote-rb3/super-datasets-do-pacote-rb3_files/figure-html5/unnamed-chunk-6-1.png"/>
-</div>
-<div class="description">
-<h2>Super Datasets do Pacote rb3</h2>
-<div class="dt-tags"></div>
-<p>O pacote {rb3} traz funções que retornam *super datasets*, conjuntos de dados mais ricos juntando
-a informação de diferentes datasets obtidos com as funções do pacote.</p>
-</div>
-</a>
-<a href="posts/2022-06-18-16-anos-de-curva-prefixada/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["R","fixedincome","rb3","opendata"]}</script>
-<div class="metadata">
-<div class="publishedDate">June 18, 2022</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2022-06-18-16-anos-de-curva-prefixada/16-anos-de-curva-prefixada_files/figure-html5/unnamed-chunk-4-1.png"/>
-</div>
-<div class="description">
-<h2>16 anos de Curva Prefixada</h2>
-<div class="dt-tags">
-<div class="dt-tag">R</div>
-<div class="dt-tag">fixedincome</div>
-<div class="dt-tag">rb3</div>
-<div class="dt-tag">opendata</div>
-</div>
-<p>Observando a dinâmica da estrutura a termo de juros no Brasil e nos Estados
-Unidos ao longo dos últimos 16 anos.</p>
-</div>
-</a>
-<a href="posts/2022-06-10-histrico-de-taxas-de-juros-em-dlar-no-brasil/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["R","fixedincome","rb3","opendata"]}</script>
-<div class="metadata">
-<div class="publishedDate">June 10, 2022</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2022-06-10-histrico-de-taxas-de-juros-em-dlar-no-brasil/histrico-de-taxas-de-juros-em-dlar-no-brasil_files/figure-html5/unnamed-chunk-1-1.png"/>
-</div>
-<div class="description">
-<h2>Histórico de Taxas de Juros em Dólar no Brasil</h2>
-<div class="dt-tags">
-<div class="dt-tag">R</div>
-<div class="dt-tag">fixedincome</div>
-<div class="dt-tag">rb3</div>
-<div class="dt-tag">opendata</div>
-</div>
-<p>Foi analisado em um post recente a dinâmica das taxas de juros,
-brasileira e americana.
-Trago neste post a comparação entre as taxas de juros em dólar,
-no Brasil e nos Estados Unidos.</p>
-</div>
-</a>
-<a href="posts/2022-06-09-histrico-de-taxas-de-juros-de-longo-prazo/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["R","fixedincome","rb3","opendata"]}</script>
-<div class="metadata">
-<div class="publishedDate">June 9, 2022</div>
-</div>
-<div class="thumbnail">
-<img data-src="posts/2022-06-09-histrico-de-taxas-de-juros-de-longo-prazo/histrico-de-taxas-de-juros-de-longo-prazo_files/figure-html5/unnamed-chunk-3-1.png"/>
-</div>
-<div class="description">
-<h2>Histórico de Taxas de Juros de Longo Prazo</h2>
-<div class="dt-tags">
-<div class="dt-tag">R</div>
-<div class="dt-tag">fixedincome</div>
-<div class="dt-tag">rb3</div>
-<div class="dt-tag">opendata</div>
-</div>
-<p>As taxas de juros de longo prazo são importantes variáveis econômicas.
-Observar a dinâmica dessas taxas é fundamental para uma boa compreensão
-do cenário econômico.
-Vamos ver como utilizar o pacote {fixedincome} para construir o histórico da
-taxa de juros prefixada para o prazo de 10 anos com dados extraídos da B3
-com o pacote {rb3}.</p>
-</div>
-</a>
-<a href="posts/2022-06-08-curva-de-juros-de-americana-us-treasuries-curve/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["R","fixedincome","opendata"]}</script>
-<div class="metadata">
-<div class="publishedDate">June 6, 2022</div>
-</div>
-<div class="thumbnail">
-<img data-src="posts/2022-06-08-curva-de-juros-de-americana-us-treasuries-curve/curva-de-juros-de-americana-us-treasuries-curve_files/figure-html5/unnamed-chunk-10-1.png"/>
-</div>
-<div class="description">
-<h2>Curva de Juros de Americana - US Treasuries Curve</h2>
-<div class="dt-tags">
-<div class="dt-tag">R</div>
-<div class="dt-tag">fixedincome</div>
-<div class="dt-tag">opendata</div>
-</div>
-<p>Como construir a curva de juros americana utilizando dados do Tesouro
-Americano (US Treasury) e o pacote {fixedincome}.</p>
-</div>
-</a>
-<a href="posts/2022-06-05-indicadores-da-pesquisa-focus/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["R","bcb","opendata"]}</script>
-<div class="metadata">
-<div class="publishedDate">June 5, 2022</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Indicadores da Pesquisa Focus</h2>
-<div class="dt-tags">
-<div class="dt-tag">R</div>
-<div class="dt-tag">bcb</div>
-<div class="dt-tag">opendata</div>
-</div>
-<p>As APIs de Expectativas de Mercado da Pesquisa Focus não informam
-direito quais indicadores estão disponíveis. A documentação é meio falha e
-pouco confiável. Dessa maneira, a única maneira de descobrir o que está
-disponível é investigando a API. É isso que vou mostrar como fazer neste post.</p>
-</div>
-</a>
-<a href="posts/2022-06-03-expectativas-focus-com-rbcb/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["R","bcb","opendata"]}</script>
-<div class="metadata">
-<div class="publishedDate">June 3, 2022</div>
-</div>
-<div class="thumbnail">
-<img data-src="posts/2022-06-03-expectativas-focus-com-rbcb/expectativas-focus-com-rbcb_files/figure-html5/ipca-mediana-desviopadrao-1.png"/>
-</div>
-<div class="description">
-<h2>Expectativas de Mercado da Pesquisa Focus no R</h2>
-<div class="dt-tags">
-<div class="dt-tag">R</div>
-<div class="dt-tag">bcb</div>
-<div class="dt-tag">opendata</div>
-</div>
-<p>Obtendo as expectativas de mercado para os indicadores macroeconômicos da
-Pesquisa Focus utilizando o R e o pacote {rbcb}.</p>
-</div>
-</a>
-<a href="posts/2022-06-09-grficos-de-composio-de-ndices-da-b3/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["R","rb3","opendata"]}</script>
-<div class="metadata">
-<div class="publishedDate">June 1, 2022</div>
-</div>
-<div class="thumbnail">
-<img data-src="posts/2022-06-09-grficos-de-composio-de-ndices-da-b3/grficos-de-composio-de-ndices-da-b3_files/figure-html5/unnamed-chunk-4-1.png"/>
-</div>
-<div class="description">
-<h2>Gráficos de Composição de Índices da B3</h2>
-<div class="dt-tags">
-<div class="dt-tag">R</div>
-<div class="dt-tag">rb3</div>
-<div class="dt-tag">opendata</div>
-</div>
-<p>Com o pacote {rb3} é possível obter a composição dos índices da B3,
-como o IBOVESPA, por exemplo. Vamos construir alguns gráficos donuts
-para avaliarmos a distribuição da composição dos índices.</p>
-</div>
-</a>
-<a href="posts/2022-01-17-dados-bcb-com-python/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["Python","bcb","opendata"]}</script>
-<div class="metadata">
-<div class="publishedDate">Jan. 17, 2022</div>
-</div>
-<div class="thumbnail">
-<img data-src="posts/2022-01-17-dados-bcb-com-python/expectativas.png"/>
-</div>
-<div class="description">
-<h2>Obtendo Dados do BCB com Python</h2>
-<div class="dt-tags">
-<div class="dt-tag">Python</div>
-<div class="dt-tag">bcb</div>
-<div class="dt-tag">opendata</div>
-</div>
-<p>Obter os dados para análise de forma simples é fundamental e necessário.</p>
-</div>
-</a>
-</div>
-<div class="posts-sidebar">
-<div class="sidebar-section categories">
-<h3>Categories</h3>
-<ul>
-<li>
-<a href="#category:Articles">Articles</a>
-<span class="category-count">(11)</span>
-</li>
-<li>
-<a href="#category:bcb">bcb</a>
-<span class="category-count">(3)</span>
-</li>
-<li>
-<a href="#category:fixedincome">fixedincome</a>
-<span class="category-count">(5)</span>
-</li>
-<li>
-<a href="#category:opendata">opendata</a>
-<span class="category-count">(9)</span>
-</li>
-<li>
-<a href="#category:Python">Python</a>
-<span class="category-count">(1)</span>
-</li>
-<li>
-<a href="#category:R">R</a>
-<span class="category-count">(8)</span>
-</li>
-<li>
-<a href="#category:rb3">rb3</a>
-<span class="category-count">(5)</span>
-</li>
-</ul>
-</div>
-</div>
-<div class="posts-more">
-<a href="#">More articles &raquo;</a>
-</div>
-</div>
-<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>Wilson Freitas</h1>
+<h1>Super Datasets para Opções de Ações</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-
+<p><p>Um dos super datasets do pacote {rb3} é o de opções de ações. Com este dataset é possível realizar diversos cálculos com dados de opções de ações, como calcular a volatilidade implícita das opções, as gregas e até mesmo fazer o ajuste de modelos teóricos.</p></p>
 </div>
 
+<div class="d-byline">
+  Wilson Freitas true 
+  
+<br/>2022-06-24
+</div>
 
 <div class="d-article">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>Dados de opções de ações finalmente disponíveis de forma simples e direta. Durante muito tempo busquei isso, os dados de opções são mais chatos pois precisam de outros dados para a realização dos cálculos. Ter apenas os dados de prêmio das opções (preços das opções) não permite que diversas das medidas de interesse associadas a opções, como as gregas e a volatilidade implícita, sejam calculadas. Utilizando Black &amp; Scholes é necessário ainda ter o preço do ativo objeto (preço da ação) e as taxas de juros. Com estas informações é possível calcular a volatilidade e a partir daí todas as demais medidas de interesse podem ser calculadas.</p>
+<p>Vou mostrar aqui como calcular a volatilidade e as gregas para opções a partir de dados obtidos com o pacote {rb3}. Para realizar os cálculos com as opções eu utilizo o pacote {oplib} que desenvolvi com diversos modelos implementados:</p>
+<ul>
+<li>Black, Scholes &amp; Merto para apreçamento das opções</li>
+<li>Black para apreçamento de opções sobre futuros, utilizado em opções sobre índices de taxas de juros, como IDI</li>
+<li>Corrado-Su para o apreçamento de opções considerando assimetria e curtose</li>
+<li>entre outros</li>
+</ul>
+<p>Este pacote ainda é experimental, não está publicado no CRAN e a documentação ainda está em desenvolvimento.</p>
+<p>Vamos começar carregando os pacotes</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/wilsonfreitas/rb3'>rb3</a></span><span class='op'>)</span></span>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/wilsonfreitas/R-bizdays'>bizdays</a></span><span class='op'>)</span></span>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/wilsonfreitas/oplib'>oplib</a></span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<p>Vamos selecionar o último dia útil para obter os dados diários do arquivo COTAHIST disponibilizado pela B3. O arquivo COTAHIST traz diversas informações do mercado de ações e inclui as opções. Adicionalmente, precisamos das taxas de juros e utilizo a função <code>rb3::yc_get</code> para obter a curva de juros para a data de referência.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>refdate</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/bizdays/man/adjust.date.html'>preceding</a></span><span class='op'>(</span><span class='st'>"2022-06-24"</span>, <span class='st'>"Brazil/ANBIMA"</span><span class='op'>)</span></span>
+<span><span class='va'>ch</span> <span class='op'>&lt;-</span> <span class='fu'><a href='http://wilsonfreitas.github.io/rb3/reference/cotahist_get.html'>cotahist_get</a></span><span class='op'>(</span><span class='va'>refdate</span>, <span class='st'>"daily"</span><span class='op'>)</span></span>
+<span><span class='va'>yc</span> <span class='op'>&lt;-</span> <span class='fu'><a href='http://wilsonfreitas.github.io/rb3/reference/yc_get.html'>yc_get</a></span><span class='op'>(</span><span class='va'>refdate</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<p>Com os dados de ações e opções, pelo arquivo COTAHIST, e com as taxas de juros, utilizo a função <code>rb3::cotahist_options_by_symbol_superset</code> para obter os dados de opções para um símbolo específico. Aqui vou utilizar <code>PETR4</code> que é uma das ações com maior volume de negociação na bolsa.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>symbol_</span> <span class='op'>&lt;-</span> <span class='st'>"PETR4"</span></span>
+<span><span class='va'>op1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='http://wilsonfreitas.github.io/rb3/reference/cotahist-options-superset.html'>cotahist_options_by_symbol_superset</a></span><span class='op'>(</span><span class='va'>symbol_</span>, <span class='va'>ch</span>, <span class='va'>yc</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<p>No data.frame <code>op1</code> temos informações de preço da ação na data de referência, preços das opções, taxas de juros, vencimento das opções, volumes de negociação e diversas outras informações.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>op1</span></span></code></pre>
+</div>
+<pre><code># A tibble: 437 x 28
+   refdate    symbol   type  strike maturity~1  open  high   low close
+   &lt;date&gt;     &lt;chr&gt;    &lt;fct&gt;  &lt;dbl&gt; &lt;date&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1 2022-06-24 PETRA140 Call    1.94 2023-01-20 24.8  24.8  24.8  24.8 
+ 2 2022-06-24 PETRA239 Call   50.4  2023-01-20  0.09  0.24  0.09  0.23
+ 3 2022-06-24 PETRA281 Call   18.4  2023-01-20  9.6   9.6   9.6   9.6 
+ 4 2022-06-24 PETRA297 Call   30.2  2023-01-20  2.7   2.7   2.7   2.7 
+ 5 2022-06-24 PETRA359 Call   29.4  2023-01-20  2.87  2.87  2.87  2.87
+ 6 2022-06-24 PETRA361 Call   26.4  2023-01-20  4.3   4.3   4.23  4.23
+ 7 2022-06-24 PETRD450 Call   38.4  2023-04-20  1.42  1.42  1.42  1.42
+ 8 2022-06-24 PETRG1   Call   13.4  2022-07-15 13.7  13.7  12.6  12.6 
+ 9 2022-06-24 PETRG121 Call   19.2  2022-07-15  7.87  7.87  7.36  7.37
+10 2022-06-24 PETRG178 Call   20.2  2022-07-15  6.7   6.7   6.45  6.45
+# ... with 427 more rows, 19 more variables: average &lt;dbl&gt;,
+#   volume &lt;dbl&gt;, traded_contracts &lt;dbl&gt;,
+#   transactions_quantity &lt;int&gt;, distribution_id &lt;int&gt;,
+#   symbol.underlying &lt;chr&gt;, open.underlying &lt;dbl&gt;,
+#   high.underlying &lt;dbl&gt;, low.underlying &lt;dbl&gt;,
+#   close.underlying &lt;dbl&gt;, average.underlying &lt;dbl&gt;, best_bid &lt;dbl&gt;,
+#   best_ask &lt;dbl&gt;, volume.underlying &lt;dbl&gt;, ...</code></pre>
+</div>
+<p>para simplificar os cálculos vou separar duas informações úteis, os vencimentos das opções e o preço de fechamento da ação, que é único para a data de referência. Os vencimentos das opções são ordenados para que eu possa facilmente selecionar um vencimento desejado.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>maturities</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/unique.html'>unique</a></span><span class='op'>(</span><span class='va'>op1</span><span class='op'>$</span><span class='va'>maturity_date</span><span class='op'>)</span> <span class='op'>|&gt;</span> <span class='fu'><a href='https://rdrr.io/r/base/sort.html'>sort</a></span><span class='op'>(</span><span class='op'>)</span></span>
+<span><span class='va'>close_underlying</span> <span class='op'>&lt;-</span> <span class='va'>op1</span><span class='op'>$</span><span class='va'>close.underlying</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span></span></code></pre>
+</div>
+</div>
+<p>As opções de ações, tipicamente, possuem maior liquidez no primeiro vencimento disponível. Por isso, vou selecionar todas as opções com <code>maturity_date == maturities[1]</code>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>op_vol</span> <span class='op'>&lt;-</span> <span class='va'>op1</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>maturity_date</span> <span class='op'>==</span> <span class='va'>maturities</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span></span>
+<span>    biz_days <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/bizdays/man/bizdays.html'>bizdays</a></span><span class='op'>(</span></span>
+<span>      <span class='va'>refdate</span>, <span class='fu'><a href='https://rdrr.io/pkg/bizdays/man/adjust.date.html'>following</a></span><span class='op'>(</span><span class='va'>maturity_date</span>, <span class='st'>"Brazil/ANBIMA"</span><span class='op'>)</span>, <span class='st'>"Brazil/ANBIMA"</span></span>
+<span>    <span class='op'>)</span>,</span>
+<span>    time_to_maturity <span class='op'>=</span> <span class='va'>biz_days</span> <span class='op'>/</span> <span class='fl'>252</span>,</span>
+<span>    rate <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Log.html'>log</a></span><span class='op'>(</span><span class='fl'>1</span> <span class='op'>+</span> <span class='va'>r_252</span><span class='op'>)</span>,</span>
+<span>    impvol <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/oplib/man/bsmimpvol.html'>bsmimpvol</a></span><span class='op'>(</span></span>
+<span>      <span class='va'>close</span>, <span class='va'>type</span>, <span class='va'>close.underlying</span>, <span class='va'>strike</span>, <span class='va'>time_to_maturity</span>, <span class='va'>rate</span>, <span class='fl'>0</span></span>
+<span>    <span class='op'>)</span>,</span>
+<span>    delta <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/oplib/man/bsmgreeks.html'>bsmdelta</a></span><span class='op'>(</span></span>
+<span>      <span class='va'>type</span>, <span class='va'>close.underlying</span>, <span class='va'>strike</span>, <span class='va'>time_to_maturity</span>, <span class='va'>rate</span>, <span class='fl'>0</span>, <span class='va'>impvol</span></span>
+<span>    <span class='op'>)</span></span>
+<span>  <span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span></span>
+<span>    <span class='va'>symbol</span>, <span class='va'>volume</span>,</span>
+<span>    <span class='va'>type</span>, <span class='va'>close.underlying</span>, <span class='va'>strike</span>, <span class='va'>time_to_maturity</span>, <span class='va'>rate</span>, <span class='va'>impvol</span>,</span>
+<span>    <span class='va'>delta</span>, <span class='va'>biz_days</span>, <span class='va'>volume</span></span>
+<span>  <span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<p>Após a seleção das opções, uma série de cálculos são realizados para obter:</p>
+<ul>
+<li>dias úteis até o vencimento <code>biz_days</code></li>
+<li>prazo em anos até o vencimento <code>time_to_maturity</code></li>
+<li>taxas de juros em capitalização contínua <code>rate</code></li>
+<li>volatilidade implícita <code>impvol</code> com o modelo Black &amp; Scholes</li>
+<li>a grega <code>delta</code> para o modelo Black &amp; Scholes</li>
+</ul>
+<p>Em seguida algumas variáveis são selecionadas para a visualizção dos dados.</p>
+<p>Vamos visualizar o <em>smile</em> de volatilidade para com os preços de exercício das opções no eixo X Coloco uma linha vertical marcando o nível do preço do ativo objeto, facilitando a interpretação do que está dentro/fora do dinheiro para as opções de compra e venda (Calls e Puts). O tamanho de cada ponto é definido pelo volumen de negociação de cada opção. Interessante notar que os maiores volumes ficam nos strikes próximos do preço atual do ativo objeto. Estas são as opções ATM, no dinheiro.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>op_vol</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>impvol</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>strike</span>, y <span class='op'>=</span> <span class='va'>impvol</span>, colour <span class='op'>=</span> <span class='va'>type</span>, size <span class='op'>=</span> <span class='va'>volume</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_abline.html'>geom_vline</a></span><span class='op'>(</span>xintercept <span class='op'>=</span> <span class='va'>close_underlying</span>, alpha <span class='op'>=</span> <span class='fl'>0.5</span>, size <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/facet_wrap.html'>facet_wrap</a></span><span class='op'>(</span><span class='va'>type</span> <span class='op'>~</span> <span class='va'>biz_days</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>legend.position <span class='op'>=</span> <span class='st'>"bottom"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span></span>
+<span>    x <span class='op'>=</span> <span class='st'>"Strike"</span>, y <span class='op'>=</span> <span class='st'>"Implied Volatility"</span>,</span>
+<span>    title <span class='op'>=</span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_glue.html'>str_glue</a></span><span class='op'>(</span><span class='st'>"Equity Options Volatility - {symbol_} {format(refdate)}"</span><span class='op'>)</span></span>
+<span>  <span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="super-datasets-para-opcoes-de-acoes_files/figure-html5/strike-vol-1.png" width="624" data-distill-preview=1 /></p>
+</div>
+<p>Abaixo temos o <em>smile</em> de volatilidade com o delta das opções no eixo X. Aqui fica mais fácil visualizar as opções ATM, pois estas tem delta de 0.5 (ou -0.5 no caso das Puts).</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>op_vol</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/NA.html'>is.na</a></span><span class='op'>(</span><span class='va'>impvol</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>delta</span>, y <span class='op'>=</span> <span class='va'>impvol</span>, colour <span class='op'>=</span> <span class='va'>type</span>, size <span class='op'>=</span> <span class='va'>volume</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_abline.html'>geom_vline</a></span><span class='op'>(</span>xintercept <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>0.5</span>, <span class='fl'>0.5</span><span class='op'>)</span>, alpha <span class='op'>=</span> <span class='fl'>0.5</span>, size <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/facet_wrap.html'>facet_wrap</a></span><span class='op'>(</span><span class='op'>~</span> <span class='va'>biz_days</span>, scales <span class='op'>=</span> <span class='st'>"free"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>legend.position <span class='op'>=</span> <span class='st'>"bottom"</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span></span>
+<span>    x <span class='op'>=</span> <span class='st'>"Delta"</span>, y <span class='op'>=</span> <span class='st'>"Implied Volatility"</span>,</span>
+<span>    title <span class='op'>=</span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_glue.html'>str_glue</a></span><span class='op'>(</span><span class='st'>"Equity Options Volatility - {symbol_} {format(refdate)}"</span><span class='op'>)</span></span>
+<span>  <span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="super-datasets-para-opcoes-de-acoes_files/figure-html5/delta-vol-1.png" width="624" /></p>
+</div>
+<p>O objetivo deste post é mostrar como é fácil obter dados de opções com o pacote {rb3} e com o pacote {oplib} realizar os cálculos com estes dados.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

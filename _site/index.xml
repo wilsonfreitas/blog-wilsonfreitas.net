@@ -25,6 +25,18 @@ de 2022.</description>
       <media:content url="https://wilsonfreitas.net/posts/2022-08-17-movimento-da-parte-longa-da-curva-de-juros/animation.gif" medium="image" type="image/gif"/>
     </item>
     <item>
+      <title>Super Datasets para Opções de Ações</title>
+      <dc:creator>Wilson Freitas</dc:creator>
+      <link>https://wilsonfreitas.net/posts/2022-06-24-super-datasets-para-opcoes-de-acoes</link>
+      <description>Um dos super datasets do pacote {rb3} é o de opções de ações.
+Com este dataset é possível realizar diversos cálculos com dados de opções de ações, como
+calcular a volatilidade implícita das opções, as gregas e até mesmo fazer o ajuste de
+modelos teóricos.</description>
+      <guid>https://wilsonfreitas.net/posts/2022-06-24-super-datasets-para-opcoes-de-acoes</guid>
+      <pubDate>Fri, 24 Jun 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://wilsonfreitas.net/posts/2022-06-24-super-datasets-para-opcoes-de-acoes/super-datasets-para-opcoes-de-acoes_files/figure-html5/strike-vol-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
       <title>Super Datasets do Pacote rb3</title>
       <dc:creator>Wilson Freitas</dc:creator>
       <link>https://wilsonfreitas.net/posts/2022-06-19-super-datasets-do-pacote-rb3</link>
