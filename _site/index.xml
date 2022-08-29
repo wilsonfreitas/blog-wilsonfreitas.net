@@ -7,7 +7,17 @@
     <description>Wilson Freitas
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 17 Aug 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 29 Aug 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Dinâmica da Volatilidade Implícita</title>
+      <dc:creator>Wilson Freitas</dc:creator>
+      <link>https://wilsonfreitas.net/posts/2022-08-29-dinamica-da-volatilidade-implicita</link>
+      <description>Como a volatilidade implícita das opções evolui no tempo? Há diversas formas de se avaliar isso.
+Aqui veremos como é a dinâmica na volatilidade das opções ATM no tempo.</description>
+      <guid>https://wilsonfreitas.net/posts/2022-08-29-dinamica-da-volatilidade-implicita</guid>
+      <pubDate>Mon, 29 Aug 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://wilsonfreitas.net/posts/2022-08-29-dinamica-da-volatilidade-implicita/dinamica-da-volatilidade-implicita_files/figure-html5/op1-vol-atm-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>Movimento da Parte Longa da Curva de Juros</title>
       <dc:creator>Wilson Freitas</dc:creator>
